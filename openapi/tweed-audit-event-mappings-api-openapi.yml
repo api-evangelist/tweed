@@ -1,0 +1,83 @@
+openapi: 3.0.3
+info:
+  title: Tweed assets audit-event-mappings API
+  description: ''
+  version: '1.0'
+  contact: {}
+servers: []
+tags:
+- name: audit-event-mappings
+paths:
+  /v1/audit-event-mappings:
+    get:
+      operationId: getAuditEventMappings
+      summary: ''
+      description: Get audit event mappings
+      parameters:
+      - name: auditType
+        required: false
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuditEventMappingDto'
+      tags:
+      - audit-event-mappings
+      security:
+      - bearer: []
+components:
+  schemas:
+    AuditEventMappingDto:
+      type: object
+      properties:
+        eventId:
+          type: string
+        auditType:
+          type: string
+          enum:
+          - AUDIT_LOG
+          - WEBHOOK
+          - SLACK
+          - EMAIL
+        description:
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        lastUpdatedAt:
+          format: date-time
+          type: string
+      required:
+      - eventId
+      - auditType
+      - description
+  securitySchemes:
+    bearer:
+      scheme: Bearer
+      bearerFormat: Bearer
+      description: 'Please enter token in following format: Bearer JWT'
+      type: http
+x-amazon-apigateway-gateway-responses:
+  DEFAULT_4XX:
+    statusCode: 403
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'
+  DEFAULT_5XX:
+    statusCode: 500
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'

@@ -1,0 +1,150 @@
+openapi: 3.0.3
+info:
+  title: Tweed assets payouts API
+  description: ''
+  version: '1.0'
+  contact: {}
+servers: []
+tags:
+- name: payouts
+paths:
+  /v1/payouts/{payoutId}:
+    get:
+      operationId: getPayoutById
+      summary: Get payout by ID
+      parameters:
+      - name: payoutId
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+      tags:
+      - payouts
+      security:
+      - bearer: []
+  /v1/payouts:
+    get:
+      operationId: getAllPayouts
+      summary: Get all payouts
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - payouts
+      security:
+      - bearer: []
+  /v1/payouts/add:
+    post:
+      operationId: addPayout
+      summary: Add payout
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddPayoutDto'
+      responses:
+        '201':
+          description: ''
+      tags:
+      - payouts
+      security:
+      - bearer: []
+  /v1/payouts/payout/{payoutId}:
+    delete:
+      operationId: deletePayout
+      summary: Delete payout
+      parameters:
+      - name: payoutId
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+      tags:
+      - payouts
+      security:
+      - bearer: []
+components:
+  schemas:
+    AddFiatPayoutDto:
+      type: object
+      properties:
+        provider:
+          type: string
+        paymentProviderId:
+          type: string
+      required:
+      - provider
+      - paymentProviderId
+    AddNativePayoutDto:
+      type: object
+      properties:
+        blockchainId:
+          type: string
+      required:
+      - blockchainId
+    AddStablecoinPayoutDto:
+      type: object
+      properties:
+        blockchainId:
+          type: string
+        tokenId:
+          type: string
+        spender:
+          type: string
+      required:
+      - blockchainId
+      - tokenId
+      - spender
+    AddPayoutDto:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - free
+          - fiat
+          - native
+          - stablecoin
+        name:
+          type: string
+        fiatDetails:
+          $ref: '#/components/schemas/AddFiatPayoutDto'
+        stablecoinDetails:
+          $ref: '#/components/schemas/AddStablecoinPayoutDto'
+        nativeDetails:
+          $ref: '#/components/schemas/AddNativePayoutDto'
+      required:
+      - type
+      - name
+  securitySchemes:
+    bearer:
+      scheme: Bearer
+      bearerFormat: Bearer
+      description: 'Please enter token in following format: Bearer JWT'
+      type: http
+x-amazon-apigateway-gateway-responses:
+  DEFAULT_4XX:
+    statusCode: 403
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'
+  DEFAULT_5XX:
+    statusCode: 500
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'

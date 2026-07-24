@@ -1,0 +1,65 @@
+openapi: 3.0.3
+info:
+  title: Tweed assets Rate API
+  description: ''
+  version: '1.0'
+  contact: {}
+servers: []
+tags:
+- name: Rate
+paths:
+  /rate/{baseCurrencyId}/{targetCurrencyId}:
+    get:
+      operationId: RateController_findOne
+      parameters:
+      - name: baseCurrencyId
+        required: true
+        in: path
+        schema:
+          type: string
+      - name: targetCurrencyId
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindRateResponseDto'
+      tags:
+      - Rate
+components:
+  schemas:
+    FindRateResponseDto:
+      type: object
+      properties:
+        rate:
+          type: number
+      required:
+      - rate
+  securitySchemes:
+    bearer:
+      scheme: Bearer
+      bearerFormat: Bearer
+      description: 'Please enter token in following format: Bearer JWT'
+      type: http
+x-amazon-apigateway-gateway-responses:
+  DEFAULT_4XX:
+    statusCode: 403
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'
+  DEFAULT_5XX:
+    statusCode: 500
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'

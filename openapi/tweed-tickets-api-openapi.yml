@@ -1,0 +1,80 @@
+openapi: 3.0.3
+info:
+  title: Tweed assets tickets API
+  description: ''
+  version: '1.0'
+  contact: {}
+servers: []
+tags:
+- name: tickets
+paths:
+  /v1/tickets:
+    post:
+      operationId: addSupportTicket
+      summary: Create a new support ticket
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSupportTicketDto'
+      responses:
+        '201':
+          description: ''
+      tags:
+      - tickets
+      security:
+      - bearer: []
+components:
+  schemas:
+    CreateSupportTicketDto:
+      type: object
+      properties:
+        contactEmail:
+          type: string
+        type:
+          type: string
+          enum:
+          - BILLING
+          - TECHNICAL
+          - GENERAL
+          - OTHER
+        subject:
+          type: string
+        message:
+          type: string
+        platformName:
+          type: string
+        memberName:
+          type: string
+      required:
+      - contactEmail
+      - type
+      - subject
+      - message
+      - platformName
+      - memberName
+  securitySchemes:
+    bearer:
+      scheme: Bearer
+      bearerFormat: Bearer
+      description: 'Please enter token in following format: Bearer JWT'
+      type: http
+x-amazon-apigateway-gateway-responses:
+  DEFAULT_4XX:
+    statusCode: 403
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'
+  DEFAULT_5XX:
+    statusCode: 500
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'

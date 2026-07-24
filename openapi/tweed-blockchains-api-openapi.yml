@@ -1,0 +1,177 @@
+openapi: 3.0.3
+info:
+  title: Tweed assets blockchains API
+  description: ''
+  version: '1.0'
+  contact: {}
+servers: []
+tags:
+- name: blockchains
+paths:
+  /v1/blockchains/{id}:
+    get:
+      operationId: findBlockchainById
+      summary: Get a blockchain by id
+      parameters:
+      - name: id
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A blockchain
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindBlockchainResponseDto'
+      tags:
+      - blockchains
+      security:
+      - bearer: []
+  /v1/blockchains:
+    get:
+      operationId: findAllBlockchains
+      summary: Get all blockchains
+      parameters: []
+      responses:
+        '200':
+          description: A list of available blockchains
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FindBlockchainResponseDto'
+      tags:
+      - blockchains
+      security:
+      - bearer: []
+  /v1/blockchains/multiple/{ids}:
+    get:
+      operationId: findMultipleBlockchainsByIds
+      summary: Get multiple blockchains by ids
+      parameters:
+      - name: ids
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A list of blockchains
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FindBlockchainResponseDto'
+      tags:
+      - blockchains
+      security:
+      - bearer: []
+  /v1/blockchains/native-asset/{id}:
+    get:
+      operationId: getBlockchainNativeAsset
+      summary: Get native asset for a blockchain
+      parameters:
+      - name: id
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetDto'
+      tags:
+      - blockchains
+      security:
+      - bearer: []
+components:
+  schemas:
+    FindBlockchainResponseDto:
+      type: object
+      properties:
+        id:
+          type: string
+        blockchainEcosystem:
+          type: object
+        nativeCurrency:
+          type: object
+        name:
+          type: string
+        isMainnet:
+          type: boolean
+        rpcUrl:
+          type: string
+        iconUrl:
+          type: string
+        explorer:
+          type: object
+        indexer:
+          type: object
+        metadata:
+          type: object
+      required:
+      - id
+      - blockchainEcosystem
+      - nativeCurrency
+      - name
+      - isMainnet
+      - rpcUrl
+      - iconUrl
+      - explorer
+      - indexer
+      - metadata
+    AssetDto:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        symbol:
+          type: string
+        iconUrl:
+          type: string
+        defaultDecimals:
+          type: number
+        isStablecoin:
+          type: boolean
+        defaultContractAddress:
+          type: string
+      required:
+      - id
+      - name
+      - symbol
+      - iconUrl
+      - defaultDecimals
+      - isStablecoin
+      - defaultContractAddress
+  securitySchemes:
+    bearer:
+      scheme: Bearer
+      bearerFormat: Bearer
+      description: 'Please enter token in following format: Bearer JWT'
+      type: http
+x-amazon-apigateway-gateway-responses:
+  DEFAULT_4XX:
+    statusCode: 403
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'
+  DEFAULT_5XX:
+    statusCode: 500
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'

@@ -1,0 +1,147 @@
+openapi: 3.0.3
+info:
+  title: Tweed assets contracts API
+  description: ''
+  version: '1.0'
+  contact: {}
+servers: []
+tags:
+- name: contracts
+paths:
+  /v1/contracts/{contractId}:
+    get:
+      operationId: getContractById
+      summary: Get contract by ID
+      parameters:
+      - name: contractId
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+      tags:
+      - contracts
+      security:
+      - bearer: []
+  /v1/contracts:
+    get:
+      operationId: getAllContracts
+      summary: Get all contracts
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - contracts
+      security:
+      - bearer: []
+  /v1/contracts/add:
+    post:
+      operationId: addContract
+      summary: Add contract
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddContractDto'
+      responses:
+        '201':
+          description: ''
+      tags:
+      - contracts
+      security:
+      - bearer: []
+  /v1/contracts/add-contract-function:
+    post:
+      operationId: addContractFunction
+      summary: Add contract function
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddContractFunctionDto'
+      responses:
+        '201':
+          description: ''
+      tags:
+      - contracts
+      security:
+      - bearer: []
+  /v1/contracts/contract/{contractId}:
+    delete:
+      operationId: deleteContract
+      summary: Delete contract
+      parameters:
+      - name: contractId
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+      tags:
+      - contracts
+      security:
+      - bearer: []
+components:
+  schemas:
+    AddContractDto:
+      type: object
+      properties:
+        address:
+          type: string
+        blockchainId:
+          type: string
+        abi:
+          type: string
+      required:
+      - address
+      - blockchainId
+      - abi
+    AddContractFunctionDto:
+      type: object
+      properties:
+        contractId:
+          type: string
+        functionSignature:
+          type: string
+        fixedFunctionParams:
+          type: object
+          additionalProperties:
+            type: string
+        abiVersion:
+          type: string
+      required:
+      - contractId
+      - functionSignature
+      - fixedFunctionParams
+  securitySchemes:
+    bearer:
+      scheme: Bearer
+      bearerFormat: Bearer
+      description: 'Please enter token in following format: Bearer JWT'
+      type: http
+x-amazon-apigateway-gateway-responses:
+  DEFAULT_4XX:
+    statusCode: 403
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'
+  DEFAULT_5XX:
+    statusCode: 500
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'

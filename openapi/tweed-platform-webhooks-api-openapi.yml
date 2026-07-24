@@ -1,0 +1,188 @@
+openapi: 3.0.3
+info:
+  title: Tweed assets platform-webhooks API
+  description: ''
+  version: '1.0'
+  contact: {}
+servers: []
+tags:
+- name: platform-webhooks
+paths:
+  /v1/platform-webhooks:
+    get:
+      operationId: getPlatformWebhooks
+      summary: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PlatformWebhookDto'
+      tags:
+      - platform-webhooks
+      security:
+      - bearer: []
+    post:
+      operationId: addPlatformWebhook
+      summary: ''
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePlatformWebhookDto'
+      responses:
+        '201':
+          description: ''
+      tags:
+      - platform-webhooks
+      security:
+      - bearer: []
+  /v1/platform-webhooks/{id}:
+    put:
+      operationId: updatePlatformWebhook
+      summary: ''
+      parameters:
+      - name: id
+        required: true
+        in: path
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePlatformWebhookDto'
+      responses:
+        '200':
+          description: ''
+      tags:
+      - platform-webhooks
+      security:
+      - bearer: []
+    delete:
+      operationId: deletePlatformWebhook
+      summary: ''
+      parameters:
+      - name: id
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+      tags:
+      - platform-webhooks
+      security:
+      - bearer: []
+  /v1/platform-webhooks/{id}/set-active:
+    post:
+      operationId: setActivePlatformWebhook
+      summary: ''
+      parameters:
+      - name: id
+        required: true
+        in: path
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetPlatformWebhookActiveDto'
+      responses:
+        '201':
+          description: ''
+      tags:
+      - platform-webhooks
+      security:
+      - bearer: []
+components:
+  schemas:
+    SetPlatformWebhookActiveDto:
+      type: object
+      properties:
+        isActive:
+          type: boolean
+      required:
+      - isActive
+    PlatformWebhookDto:
+      type: object
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+        isActive:
+          type: boolean
+        events:
+          type: array
+          items:
+            type: string
+        createdAt:
+          format: date-time
+          type: string
+        lastUpdatedAt:
+          format: date-time
+          type: string
+      required:
+      - id
+      - url
+      - isActive
+      - events
+    CreatePlatformWebhookDto:
+      type: object
+      properties:
+        url:
+          type: string
+        events:
+          type: array
+          items:
+            type: string
+        secret:
+          type: string
+      required:
+      - url
+      - events
+    UpdatePlatformWebhookDto:
+      type: object
+      properties:
+        url:
+          type: string
+        events:
+          type: array
+          items:
+            type: string
+        secret:
+          type: string
+  securitySchemes:
+    bearer:
+      scheme: Bearer
+      bearerFormat: Bearer
+      description: 'Please enter token in following format: Bearer JWT'
+      type: http
+x-amazon-apigateway-gateway-responses:
+  DEFAULT_4XX:
+    statusCode: 403
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'
+  DEFAULT_5XX:
+    statusCode: 500
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'

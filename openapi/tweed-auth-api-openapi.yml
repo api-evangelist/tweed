@@ -1,0 +1,110 @@
+openapi: 3.0.3
+info:
+  title: Tweed assets auth API
+  description: ''
+  version: '1.0'
+  contact: {}
+servers: []
+tags:
+- name: auth
+paths:
+  /v1/auth:
+    post:
+      operationId: AuthController_verify
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: string
+      tags:
+      - auth
+      security:
+      - bearer: []
+  /v1/auth/api-keys:
+    post:
+      operationId: AuthController_generateApiToken
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiTokenDto'
+      tags:
+      - auth
+      security:
+      - bearer: []
+    get:
+      operationId: AuthController_getApiKeys
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiTokenDto'
+      tags:
+      - auth
+      security:
+      - bearer: []
+  /v1/auth/api-keys/{token}:
+    delete:
+      operationId: AuthController_deleteApiKey
+      parameters:
+      - name: token
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+      tags:
+      - auth
+      security:
+      - bearer: []
+components:
+  schemas:
+    ApiTokenDto:
+      type: object
+      properties:
+        token:
+          type: string
+        secret:
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+      required:
+      - token
+      - secret
+  securitySchemes:
+    bearer:
+      scheme: Bearer
+      bearerFormat: Bearer
+      description: 'Please enter token in following format: Bearer JWT'
+      type: http
+x-amazon-apigateway-gateway-responses:
+  DEFAULT_4XX:
+    statusCode: 403
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'
+  DEFAULT_5XX:
+    statusCode: 500
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'

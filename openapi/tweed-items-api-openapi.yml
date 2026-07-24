@@ -1,0 +1,240 @@
+openapi: 3.0.3
+info:
+  title: Tweed assets items API
+  description: ''
+  version: '1.0'
+  contact: {}
+servers: []
+tags:
+- name: items
+paths:
+  /v1/items/{id}:
+    get:
+      operationId: getItemById
+      summary: Get item by id
+      parameters:
+      - name: id
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemDto'
+      tags:
+      - items
+      security:
+      - bearer: []
+    delete:
+      operationId: deleteItem
+      summary: Delete item
+      parameters:
+      - name: id
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+      tags:
+      - items
+      security:
+      - bearer: []
+  /v1/items/add:
+    post:
+      operationId: addItem
+      summary: Add item
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddItemDto'
+      responses:
+        '201':
+          description: ''
+      tags:
+      - items
+      security:
+      - bearer: []
+  /v1/items:
+    get:
+      operationId: getAllItems
+      summary: Get all items
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - items
+      security:
+      - bearer: []
+  /v1/items/all/contract/count/{contractId}:
+    get:
+      operationId: getItemsCountByContractId
+      summary: Get items count by contract id
+      parameters:
+      - name: contractId
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+      tags:
+      - items
+      security:
+      - bearer: []
+  /v1/items/all/payout/count/{payoutId}:
+    get:
+      operationId: getItemCountByPayoutId
+      summary: Get items count by payout id
+      parameters:
+      - name: payoutId
+        required: true
+        in: path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+      tags:
+      - items
+      security:
+      - bearer: []
+components:
+  schemas:
+    ItemDto:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        currency:
+          type: string
+        price:
+          type: number
+        description:
+          type: string
+        imageUrl:
+          type: string
+        payout:
+          $ref: '#/components/schemas/PayoutDto'
+        contractFunction:
+          $ref: '#/components/schemas/ContractFunctionDto'
+        isMainnet:
+          type: boolean
+      required:
+      - id
+      - title
+      - currency
+      - price
+      - description
+      - imageUrl
+      - payout
+      - contractFunction
+      - isMainnet
+    ContractFunctionDto:
+      type: object
+      properties:
+        functionSignature:
+          type: string
+        fixedFunctionParams:
+          type: object
+        contract:
+          $ref: '#/components/schemas/ContractDto'
+      required:
+      - functionSignature
+      - fixedFunctionParams
+      - contract
+    ContractDto:
+      type: object
+      properties:
+        address:
+          type: string
+        blockchainId:
+          type: string
+        abi:
+          type: object
+      required:
+      - address
+      - blockchainId
+      - abi
+    PayoutDto:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - free
+          - fiat
+          - native
+          - stablecoin
+        blockchainId:
+          type: string
+        stripeConnectedAccountId:
+          type: string
+        assetId:
+          type: string
+        spender:
+          type: string
+      required:
+      - type
+      - blockchainId
+      - stripeConnectedAccountId
+      - assetId
+      - spender
+    AddItemDto:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        currency:
+          type: string
+        priceCurrency:
+          type: number
+        imageUrl:
+          type: string
+        contractFunctionId:
+          type: string
+        payoutId:
+          type: string
+      required:
+      - title
+      - currency
+      - priceCurrency
+      - contractFunctionId
+      - payoutId
+  securitySchemes:
+    bearer:
+      scheme: Bearer
+      bearerFormat: Bearer
+      description: 'Please enter token in following format: Bearer JWT'
+      type: http
+x-amazon-apigateway-gateway-responses:
+  DEFAULT_4XX:
+    statusCode: 403
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'
+  DEFAULT_5XX:
+    statusCode: 500
+    responseParameters:
+      gatewayresponse.header.Access-Control-Allow-Origin: '''*'''
+      gatewayresponse.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      gatewayresponse.header.Access-Control-Allow-Methods: '''GET,OPTIONS,POST'''
+    responseTemplates:
+      application/json: '{"message":$context.error.messageString}'
