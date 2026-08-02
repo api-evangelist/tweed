@@ -1,0 +1,80 @@
+# Tweed Docs
+
+## Tweed Docs
+
+- [Welcome to Tweed](https://docs.paytweed.com/welcome-to-tweed.md)
+- [What Can Tweed Do?](https://docs.paytweed.com/welcome-to-tweed/what-can-tweed-do.md): Tweed's solution is built around four key pillars: Wallets, Connectivity, Payments, and Authentication
+- [Embedded Wallets | WaaS](https://docs.paytweed.com/getting-started/embedded-wallets-or-waas.md): Develop your own platform wallets to offer users secure and recoverable options for signing transactions, spending cryptocurrency, and transferring assets.
+- [Token Checkout | Payments](https://docs.paytweed.com/getting-started/token-checkout-or-payments.md): Start selling fungible and non-fungible tokens in your platform
+- [Flow of Funds: Purchase to Settlement](https://docs.paytweed.com/getting-started/token-checkout-or-payments/flow-of-funds-purchase-to-settlement.md): How Tweed manages payouts in accordance with a buyer's journey on your platform
+- [Token Checkout](https://docs.paytweed.com/getting-started/token-checkout-or-payments/token-checkout.md): Effortless Integration for Selling Tokens: Simplified Like Never Before
+- [Legacy Token Checkout](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout.md)
+- [Basic Checkout Integration](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout/basic-checkout-integration.md): To seamlessly integrate token checkout into your application, follow these steps
+- [Checkout + WaaS + Auth](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout/checkout-+-waas-+-auth.md): Leverage all the benefits Tweed offers in your application
+- [Features](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout/features.md)
+- [Payment links](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout/features/payment-links.md): create a payment links or use token checkout without using a frontend
+- [Whitelist](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout/features/whitelist.md): Wallets and Emails
+- [Flow of Funds](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout/features/flow-of-funds.md): choose how to get funds; as fiat or crypto
+- [Apple & Google Pay](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout/features/apple-and-google-pay.md): Enable Quick and Secure Checkout with Google and Apple pay
+- [AML & KYC Policy Overview](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout/features/aml-and-kyc-policy-overview.md)
+- [Dynamic Token Amount](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout/features/dynamic-token-amount.md)
+- [Marketplace Integration](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout/features/marketplace-integration.md)
+- [Tweed SDKs](https://docs.paytweed.com/developer-tools/tweed-sdks.md): Libraries and  tools for utilizing your tweed integration
+- [core-react](https://docs.paytweed.com/developer-tools/tweed-sdks/core-react.md): tweed React SDK
+- [useAuth](https://docs.paytweed.com/developer-tools/tweed-sdks/core-react/useauth.md): Manage user authentication with functions such as connect, logout, and retrieve access token.
+- [useWallet](https://docs.paytweed.com/developer-tools/tweed-sdks/core-react/usewallet.md): Manage the user's wallet, including secure access to their mnemonic
+- [useTweed](https://docs.paytweed.com/developer-tools/tweed-sdks/core-react/usetweed.md): Manage your Tweed SDK integration using the useTweed hook, which includes the setPaletteMode function and the SDK's loading state.
+- [usePayments](https://docs.paytweed.com/developer-tools/tweed-sdks/core-react/usepayments.md): Integrate Tweed Payments into your application and start selling NFTs and tokens effortlessly using a  usePayments hook.
+- [useWeb3](https://docs.paytweed.com/developer-tools/tweed-sdks/core-react/useweb3.md): This hook is your gateway to the Web3 world. Use it to obtain the ethereumProvider and begin interacting with the blockchain, such as signing transactions.
+- [core-js](https://docs.paytweed.com/developer-tools/tweed-sdks/core-js.md): tweed javascript SDK
+- [core-vue](https://docs.paytweed.com/developer-tools/tweed-sdks/core-vue.md): tweed vue SDK
+- [Payments SDKs (v1)](https://docs.paytweed.com/developer-tools/tweed-sdks/payments-sdks-v1.md): tweed's payment SDK build to giving you the best way sell fungible and non-fungible tokens in your platform
+- [Frontend SDKs (Payments)](https://docs.paytweed.com/developer-tools/tweed-sdks/payments-sdks-v1/frontend-sdks-payments.md)
+- [Backend SDK (Payments)](https://docs.paytweed.com/developer-tools/tweed-sdks/payments-sdks-v1/backend-sdk-payments.md)
+- [How to set up your smart contract for Tweed](https://docs.paytweed.com/developer-tools/tweed-sdks/payments-sdks-v1/how-to-set-up-your-smart-contract-for-tweed.md)
+- [Tezos chain considerations](https://docs.paytweed.com/developer-tools/tweed-sdks/payments-sdks-v1/tezos-chain-considerations.md)
+- [Management Dashboard](https://docs.paytweed.com/developer-tools/management-dashboard.md)
+- [Create platform](https://docs.paytweed.com/developer-tools/management-dashboard/create-platform.md)
+- [Manage Team](https://docs.paytweed.com/developer-tools/management-dashboard/create-platform/manage-team.md)
+- [Create application](https://docs.paytweed.com/developer-tools/management-dashboard/create-application.md)
+- [UI Customization](https://docs.paytweed.com/developer-tools/management-dashboard/create-application/ui-customization.md)
+- [Webhooks](https://docs.paytweed.com/developer-tools/webhooks.md)
+- [Checkout Webhooks](https://docs.paytweed.com/developer-tools/webhooks/checkout-webhooks.md)
+- [API](https://docs.paytweed.com/developer-tools/api.md)
+- [API (V1)](https://docs.paytweed.com/developer-tools/api/api-v1.md): Utilize this robust API to effectively manage tokens for sale within your application.
+- [API (V2)](https://docs.paytweed.com/developer-tools/api/api-v2.md)
+- [Authorization](https://docs.paytweed.com/developer-tools/api/api-v2/authorization.md): To interact with our API, users must authenticate their requests using a User Access Token. Follow the steps below to obtain and use a token for authorization
+- [API reference](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference.md)
+- [Contracts](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/contracts.md)
+- [Add](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/contracts/add.md)
+- [Add contract function](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/contracts/add-contract-function.md)
+- [Contract](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/contracts/contract.md)
+- [Payouts](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/payouts.md)
+- [Add](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/payouts/add.md)
+- [Payout](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/payouts/payout.md)
+- [Items](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/items.md)
+- [Add](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/items/add.md)
+- [All](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/items/all.md)
+- [Contract](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/items/all/contract.md)
+- [Count](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/items/all/contract/count.md)
+- [Payout](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/items/all/payout.md)
+- [Count](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/items/all/payout/count.md)
+- [Assets](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/assets.md)
+- [Blockchain](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/assets/blockchain.md)
+- [All](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/assets/all.md)
+- [Blockchains](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/assets/all/blockchains.md)
+- [Blockchains](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/blockchains.md)
+- [Multiple](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/blockchains/multiple.md)
+- [Native asset](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/blockchains/native-asset.md)
+- [Audit event mappings](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/audit-event-mappings.md)
+- [Platform webhooks](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/platform-webhooks.md)
+- [Set active](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/platform-webhooks/set-active.md)
+- [Tickets](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference/tickets.md)
+- [External Integrations](https://docs.paytweed.com/developer-tools/external-integrations.md)
+- [Wagmi connector](https://docs.paytweed.com/developer-tools/external-integrations/wagmi-connector.md): Unlock Advanced Features with Tweed’s Wagmi Connector: Simplified Integration and Enhanced Security for Web3 Developers
+- [Onramp to Crypto](https://docs.paytweed.com/developer-tools/external-integrations/onramp-to-crypto.md): This feature is currently an alpha release
+- [Example Projects](https://docs.paytweed.com/developer-tools/example-projects.md)
+- [Supported Blockchains](https://docs.paytweed.com/developer-tools/supported-blockchains.md): We support the following blockchains. Contact us for new chain support!
+- [Pricing](https://docs.paytweed.com/developer-tools/pricing.md): Find our fees for Wallet as a Service and NFT & Token Checkout below
+- [WaaS](https://docs.paytweed.com/products/waas.md): Elevate Your Platform with Tweed's Revolutionary Wallet-as-a-Service
+- [Payments](https://docs.paytweed.com/products/payments.md): Fungible and Non Fungible

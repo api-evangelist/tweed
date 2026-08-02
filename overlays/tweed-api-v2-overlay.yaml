@@ -1,0 +1,41 @@
+# generated: 2026-07-21 | method: generated | source: openapi/tweed-api-v2-openapi-original.json
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Tweed API (V2)
+  version: 1.0.0
+extends: openapi/tweed-api-v2-openapi-original.json
+actions:
+  - target: $.info
+    description: >-
+      The published spec ships an empty description and contact; fill in what
+      the docs establish and annotate with API Evangelist metadata.
+    update:
+      description: >-
+        Tweed API (V2) — manage smart contracts, sellable items, payouts,
+        assets, blockchains, platform webhooks, and token checkout for
+        Tweed's wallet-as-a-service and NFT/token checkout platform.
+        Documented at https://docs.paytweed.com/developer-tools/api/api-v2.
+      contact:
+        url: https://docs.paytweed.com/
+      x-apievangelist:
+        provider: tweed
+        harvested: '2026-07-21'
+        source: https://api-v2.prod.paytweed.com/api-spec.json
+  - target: $
+    description: >-
+      The published spec declares servers: [] — the docs state the base URL is
+      https://api-v2.prod.paytweed.com/, so add it.
+    update:
+      servers:
+        - url: https://api-v2.prod.paytweed.com
+          description: Production (only environment documented)
+  - target: $.components.securitySchemes.bearer
+    description: >-
+      Clarify the documented token format — the Authorization page instructs
+      clients to send "Bearer <API_KEY>:<API_SECRET>" from a User Access Token
+      created in the Management Dashboard.
+    update:
+      description: >-
+        User Access Token from the Management Dashboard, sent as
+        "Authorization: Bearer <API_KEY>:<API_SECRET>". See
+        https://docs.paytweed.com/developer-tools/api/api-v2/authorization.

@@ -1,0 +1,114 @@
+generated: '2026-07-21'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=paytweed
+packages:
+  - language: javascript
+    registry: npm
+    name: "@paytweed/core-js"
+    url: https://www.npmjs.com/package/@paytweed/core-js
+    install: npm install @paytweed/core-js
+    version: 1.6.0
+    published: '2025-02-11'
+    description: Paytweed Core Javascript SDK
+    docs: https://docs.paytweed.com/developer-tools/tweed-sdks/core-js
+    official: true
+  - language: javascript
+    framework: react
+    registry: npm
+    name: "@paytweed/core-react"
+    url: https://www.npmjs.com/package/@paytweed/core-react
+    install: npm install @paytweed/core-react
+    version: 1.6.0
+    published: '2025-02-11'
+    description: Paytweed Core React SDK
+    docs: https://docs.paytweed.com/developer-tools/tweed-sdks/core-react
+    official: true
+  - language: javascript
+    framework: vue
+    registry: npm
+    name: "@paytweed/core-vue"
+    url: https://www.npmjs.com/package/@paytweed/core-vue
+    install: npm install @paytweed/core-vue
+    version: 0.9.4
+    published: '2025-02-11'
+    description: Paytweed Core Vue SDK
+    docs: https://docs.paytweed.com/developer-tools/tweed-sdks/core-vue
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@paytweed/frontend-sdk"
+    url: https://www.npmjs.com/package/@paytweed/frontend-sdk
+    install: npm install @paytweed/frontend-sdk
+    version: 2.0.14
+    published: '2024-06-23'
+    description: Tweed frontend SDK (js) — Payments SDKs (v1)
+    docs: https://docs.paytweed.com/developer-tools/tweed-sdks/payments-sdks-v1/frontend-sdks-payments
+    official: true
+  - language: javascript
+    framework: react
+    registry: npm
+    name: "@paytweed/frontend-sdk-react"
+    url: https://www.npmjs.com/package/@paytweed/frontend-sdk-react
+    install: npm install @paytweed/frontend-sdk-react
+    version: 2.0.14
+    published: '2024-06-23'
+    description: Tweed React Frontend SDK — Payments SDKs (v1)
+    docs: https://docs.paytweed.com/developer-tools/tweed-sdks/payments-sdks-v1/frontend-sdks-payments
+    official: true
+  - language: javascript
+    framework: react-native
+    registry: npm
+    name: "@paytweed/frontend-sdk-react-native"
+    url: https://www.npmjs.com/package/@paytweed/frontend-sdk-react-native
+    install: npm install @paytweed/frontend-sdk-react-native
+    version: 0.0.14
+    description: Tweed React Frontend SDK (React Native)
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@paytweed/backend-sdk"
+    url: https://www.npmjs.com/package/@paytweed/backend-sdk
+    install: npm install @paytweed/backend-sdk
+    version: 2.0.17
+    published: '2024-06-23'
+    description: Tweed Backend SDK — Payments SDKs (v1)
+    docs: https://docs.paytweed.com/developer-tools/tweed-sdks/payments-sdks-v1/backend-sdk-payments
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@paytweed/shared-sdk"
+    url: https://www.npmjs.com/package/@paytweed/shared-sdk
+    install: npm install @paytweed/shared-sdk
+    version: 2.0.14
+    description: Tweed shared SDK
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@paytweed/compliance-sdk"
+    url: https://www.npmjs.com/package/@paytweed/compliance-sdk
+    install: npm install @paytweed/compliance-sdk
+    version: 3.0.0
+    description: SDK for Compliance API
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@paytweed/frontend-sdk-core"
+    url: https://www.npmjs.com/package/@paytweed/frontend-sdk-core
+    install: npm install @paytweed/frontend-sdk-core
+    version: 0.0.14
+    description: Internal Nx-generated frontend SDK core library
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@paytweed/frontend-sdk-react-core"
+    url: https://www.npmjs.com/package/@paytweed/frontend-sdk-react-core
+    install: npm install @paytweed/frontend-sdk-react-core
+    version: 0.0.14
+    description: Internal Nx-generated React frontend SDK core library
+    official: true
+notes: >-
+  All packages are published under the @paytweed npm scope (first-party). The
+  GitHub org github.com/paytweed referenced by the docs returns 404 (no longer
+  public), so registry pages are the canonical package surface. Core SDKs
+  (core-js/core-react/core-vue) are the current generation; frontend-sdk*/
+  backend-sdk are the Payments SDKs (v1) generation.

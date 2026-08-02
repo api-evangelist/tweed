@@ -1,0 +1,120 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/tweed-api-v2-openapi-original.json
+notes: >-
+  No official Tweed MCP server was found (npm @paytweed scope has no MCP
+  package, no MCP registry listing, no mention in docs.paytweed.com). This is
+  a candidate tool list derived from the Tweed API (V2) OpenAPI operations.
+server:
+  name: tweed
+  transport: http
+tools:
+  - name: get_contract_by_id
+    description: Get contract by ID
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getContractById
+  - name: get_all_contracts
+    description: Get all contracts
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getAllContracts
+  - name: add_contract
+    description: Add contract
+    source_operation: openapi/tweed-api-v2-openapi-original.json#addContract
+  - name: add_contract_function
+    description: Add contract function
+    source_operation: openapi/tweed-api-v2-openapi-original.json#addContractFunction
+  - name: delete_contract
+    description: Delete contract
+    source_operation: openapi/tweed-api-v2-openapi-original.json#deleteContract
+  - name: get_payout_by_id
+    description: Get payout by ID
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getPayoutById
+  - name: get_all_payouts
+    description: Get all payouts
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getAllPayouts
+  - name: add_payout
+    description: Add payout
+    source_operation: openapi/tweed-api-v2-openapi-original.json#addPayout
+  - name: delete_payout
+    description: Delete payout
+    source_operation: openapi/tweed-api-v2-openapi-original.json#deletePayout
+  - name: get_item_by_id
+    description: Get item by id
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getItemById
+  - name: delete_item
+    description: Delete item
+    source_operation: openapi/tweed-api-v2-openapi-original.json#deleteItem
+  - name: add_item
+    description: Add item
+    source_operation: openapi/tweed-api-v2-openapi-original.json#addItem
+  - name: get_all_items
+    description: Get all items
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getAllItems
+  - name: get_items_count_by_contract_id
+    description: Get items count by contract id
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getItemsCountByContractId
+  - name: get_item_count_by_payout_id
+    description: Get items count by payout id
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getItemCountByPayoutId
+  - name: find_asset_by_id
+    description: Get an asset by id
+    source_operation: openapi/tweed-api-v2-openapi-original.json#findAssetById
+  - name: find_all_assets
+    description: Get all assets
+    source_operation: openapi/tweed-api-v2-openapi-original.json#findAllAssets
+  - name: find_assets_by_blockchain_id
+    description: Get assets by blockchain id
+    source_operation: openapi/tweed-api-v2-openapi-original.json#findAssetsByBlockchainId
+  - name: find_all_asset_blockchains
+    description: Get all asset blockchains
+    source_operation: openapi/tweed-api-v2-openapi-original.json#findAllAssetBlockchains
+  - name: find_asset_blockchain_by_id
+    description: Get an asset blockchain by id
+    source_operation: openapi/tweed-api-v2-openapi-original.json#findAssetBlockchainById
+  - name: find_blockchain_by_id
+    description: Get a blockchain by id
+    source_operation: openapi/tweed-api-v2-openapi-original.json#findBlockchainById
+  - name: find_all_blockchains
+    description: Get all blockchains
+    source_operation: openapi/tweed-api-v2-openapi-original.json#findAllBlockchains
+  - name: find_multiple_blockchains_by_ids
+    description: Get multiple blockchains by ids
+    source_operation: openapi/tweed-api-v2-openapi-original.json#findMultipleBlockchainsByIds
+  - name: get_blockchain_native_asset
+    description: Get native asset for a blockchain
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getBlockchainNativeAsset
+  - name: get_audit_event_mappings
+    description: Get audit event mappings
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getAuditEventMappings
+  - name: get_platform_webhooks
+    description: Get platform webhooks
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getPlatformWebhooks
+  - name: add_platform_webhook
+    description: Add platform webhook
+    source_operation: openapi/tweed-api-v2-openapi-original.json#addPlatformWebhook
+  - name: update_platform_webhook
+    description: Update platform webhook
+    source_operation: openapi/tweed-api-v2-openapi-original.json#updatePlatformWebhook
+  - name: delete_platform_webhook
+    description: Delete platform webhook
+    source_operation: openapi/tweed-api-v2-openapi-original.json#deletePlatformWebhook
+  - name: set_active_platform_webhook
+    description: Activate or deactivate a platform webhook
+    source_operation: openapi/tweed-api-v2-openapi-original.json#setActivePlatformWebhook
+  - name: get_checkout_item_price
+    description: Get the price of an item
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getCheckoutItemPrice
+  - name: create_checkout_intent
+    description: Create a checkout intent
+    source_operation: openapi/tweed-api-v2-openapi-original.json#CheckoutController_createCheckoutIntent
+  - name: perform_checkout
+    description: Perform a checkout
+    source_operation: openapi/tweed-api-v2-openapi-original.json#CheckoutController_performCheckout
+  - name: get_checkout_by_id
+    description: Get checkout by ID
+    source_operation: openapi/tweed-api-v2-openapi-original.json#getCheckoutById
+  - name: get_rate
+    description: Get exchange rate between a base and target currency
+    source_operation: openapi/tweed-api-v2-openapi-original.json#RateController_findOne
+  - name: add_support_ticket
+    description: Create a new support ticket
+    source_operation: openapi/tweed-api-v2-openapi-original.json#addSupportTicket

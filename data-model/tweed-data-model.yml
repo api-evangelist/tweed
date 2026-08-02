@@ -1,0 +1,55 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/tweed-api-v2-openapi-original.json
+notes: >-
+  Entity-relationship graph derived from the Tweed API (V2) component schemas
+  (id-reference fields and nested DTO refs). No published object reference or
+  id-prefix scheme exists beyond the spec.
+entities:
+  - name: Blockchain
+    schema: FindBlockchainResponseDto
+    description: Supported chain (ecosystem, native currency, RPC, explorer, mainnet flag)
+  - name: Asset
+    schema: AssetDto
+    description: Currency/token (symbol, decimals, stablecoin flag)
+  - name: AssetBlockchain
+    schema: AssetBlockchainDto
+    description: Deployment of an asset on a specific chain (contract address, decimals)
+  - name: Contract
+    schema: ContractDto
+    description: Registered smart contract (address, ABI) on a chain
+  - name: ContractFunction
+    schema: ContractFunctionDto
+    description: Callable mint/sale function of a contract (signature, fixed params)
+  - name: Payout
+    schema: PayoutDto
+    description: Settlement destination — fiat (Stripe connected account), stablecoin, or native
+  - name: Item
+    schema: ItemDto
+    description: Sellable token/NFT listing (title, price, image) bound to a contract function and payout
+  - name: Checkout
+    schema: CheckoutIntentResponseDto
+    description: Checkout intent/session for an item purchase (status, clientSecret, KYC state)
+  - name: PlatformWebhook
+    schema: PlatformWebhookDto
+    description: Webhook endpoint subscription (url, events, active flag)
+  - name: AuditEventMapping
+    schema: AuditEventMappingDto
+    description: Mapping of platform events to audit types
+  - name: ApiToken
+    schema: ApiTokenDto
+    description: API credential pair (token, secret)
+relationships:
+  - { from: Contract, to: Blockchain, kind: belongs_to, via: blockchainId }
+  - { from: ContractFunction, to: Contract, kind: belongs_to, via: contractId }
+  - { from: Contract, to: ContractFunction, kind: has_many, via: contractId }
+  - { from: Item, to: ContractFunction, kind: belongs_to, via: contractFunctionId }
+  - { from: Item, to: Payout, kind: belongs_to, via: payoutId }
+  - { from: Payout, to: Blockchain, kind: belongs_to, via: blockchainId }
+  - { from: Payout, to: Asset, kind: belongs_to, via: assetId }
+  - { from: AssetBlockchain, to: Asset, kind: belongs_to, via: assetId }
+  - { from: AssetBlockchain, to: Blockchain, kind: belongs_to, via: blockchainId }
+  - { from: Asset, to: AssetBlockchain, kind: has_many, via: assetId }
+  - { from: Blockchain, to: Asset, kind: has_one, via: nativeCurrencyId, notes: native asset per chain }
+  - { from: Checkout, to: Item, kind: belongs_to, via: itemId }
+  - { from: Item, to: Contract, kind: has_one, via: contractFunction.contract, notes: through ContractFunction }

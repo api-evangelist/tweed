@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: generated
+notes: >-
+  No provider-published Agent Skills or AGENTS.md found (GitHub org is gone;
+  docs ship none). These skills are generated from the harvested OpenAPI —
+  every operationId verified against openapi/tweed-api-v2-openapi-original.json.
+skills:
+  - file: tweed-catalog-and-sell-token.md
+    name: Catalog and sell a token with Tweed
+    api: openapi/tweed-api-v2-openapi-original.json
+    operations: [addContract, addContractFunction, addPayout, addItem, getAllItems, getItemById]
+  - file: tweed-run-a-checkout.md
+    name: Run a token checkout with Tweed
+    api: openapi/tweed-api-v2-openapi-original.json
+    operations: [getCheckoutItemPrice, CheckoutController_createCheckoutIntent, CheckoutController_performCheckout, getCheckoutById]
+  - file: tweed-manage-platform-webhooks.md
+    name: Manage Tweed platform webhooks
+    api: openapi/tweed-api-v2-openapi-original.json
+    operations: [getPlatformWebhooks, addPlatformWebhook, updatePlatformWebhook, setActivePlatformWebhook, deletePlatformWebhook]

@@ -1,0 +1,57 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/tweed-api-v2-openapi-original.json + docs.paytweed.com
+authentication:
+  style: bearer token
+  detail: >-
+    V2 sends "Authorization: Bearer <API_KEY>:<API_SECRET>" (User Access Token
+    from the dashboard); V1 exchanges apiKey/apiSecret for a JWT at
+    api-console.paytweed.com/auth/getAccessToken. See
+    authentication/tweed-authentication.yml.
+idempotency:
+  supported: false
+  notes: >-
+    No Idempotency-Key header or equivalent is documented for API requests.
+    Webhook deliveries carry an X-Tweed-Delivery id so consumers can
+    deduplicate redeliveries (consumer-side idempotency only).
+pagination:
+  style: none
+  notes: >-
+    No pagination parameters appear in any of the 36 documented paths;
+    list endpoints (getAllContracts, getAllItems, getAllPayouts, findAllAssets,
+    findAllBlockchains) return unpaginated collections.
+field_expansion: none documented
+metadata:
+  notes: >-
+    Checkout intents accept customParams, echoed back in the
+    CHECKOUT_STATUS_UPDATED webhook payload (checkoutData.customParams).
+request_tracing:
+  api: none documented
+  webhooks:
+    - header: X-Tweed-Hook-ID
+      purpose: stable id of the configured webhook
+    - header: X-Tweed-Event
+      purpose: event identifier
+    - header: X-Tweed-Delivery
+      purpose: unique delivery id for replay-attack prevention / dedup
+    - header: X-Hub-Signature-256
+      purpose: HMAC-SHA256 signature of the payload with the signing secret
+versioning:
+  style: api-generation (V1 host vs V2 host); /v1/ uri-path prefix inside V2
+  cross_link: lifecycle/tweed-lifecycle.yml
+error_envelope:
+  documented: false
+  notes: >-
+    The OpenAPI documents only 200/201 responses; no error schema, problem
+    types, or error-code registry is published.
+rate_limits:
+  documented: false
+  notes: No rate-limit headers or quotas documented anywhere in the docs.
+webhook_security:
+  signing: HMAC-SHA256 shared secret, GitHub-style X-Hub-Signature-256 header
+  transport: HTTPS-only endpoints
+  docs: https://docs.paytweed.com/developer-tools/webhooks
+cross_links:
+  authentication: authentication/tweed-authentication.yml
+  lifecycle: lifecycle/tweed-lifecycle.yml
+  webhooks: asyncapi/tweed-webhooks.yml

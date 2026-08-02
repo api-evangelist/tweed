@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: derived
+source: docs.paytweed.com + openapi/tweed-api-v2-openapi-original.json
+versioning:
+  scheme: api-generation + uri-path
+  current: v2
+  notes: >-
+    Two API generations run side by side: API (V1) at
+    https://api-console.paytweed.com (JWT via /auth/getAccessToken, collections
+    management) and API (V2) at https://api-v2.prod.paytweed.com (paths
+    prefixed /v1/ inside the V2 host). The docs also keep a "Legacy Token
+    Checkout" guide alongside the current Token Checkout flow, and Payments
+    SDKs are labeled "(v1)" while the core-js/core-react/core-vue SDKs are the
+    current generation. No formal versioning policy document is published.
+  docs: https://docs.paytweed.com/developer-tools/api
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No published deprecation policy and no Sunset/Deprecation (RFC 8594) header
+    support documented. Deprecation is signaled informally by "Legacy" labels
+    in the docs (Legacy Token Checkout, Payments SDKs v1).
+sla: null
+status_page: null
+status_page_notes: status.paytweed.com does not resolve; no status page linked from docs
+deprecated_operations: []
+platform_status_observed:
+  probed: '2026-07-21'
+  observations:
+    - www.paytweed.com serves a Framer "Site Not Found" page (HTTP 404)
+    - dashboard.paytweed.com does not resolve (docs still link it)
+    - github.com/paytweed returns 404 (docs still link example repos there)
+    - docs.paytweed.com, api-v2.prod.paytweed.com/api-spec.json, api-console.paytweed.com and demo.paytweed.com remain live
+    - last npm publish of @paytweed packages was 2025-02-11

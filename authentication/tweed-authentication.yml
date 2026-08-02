@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: openapi/tweed-api-v2-openapi-original.json
+docs: https://docs.paytweed.com/developer-tools/api/api-v2/authorization
+summary:
+  types:
+  - http
+  patterns:
+  - bearer user-access-token (API key:secret)
+  - bearer JWT (v1)
+schemes:
+- name: bearer
+  type: http
+  scheme: Bearer
+  bearerFormat: Bearer
+  description: >-
+    API (V2): create a User Access Token (API Key + API Secret) on the
+    Management Dashboard (dashboard.paytweed.com/api-keys) and send it as
+    "Authorization: Bearer <API_KEY>:<API_SECRET>" on every request.
+  sources:
+  - openapi/tweed-api-v2-openapi-original.json
+- name: v1-jwt-bearer
+  type: http
+  scheme: Bearer
+  bearerFormat: JWT
+  description: >-
+    API (V1): POST apiKey + apiSecret to
+    https://api-console.paytweed.com/auth/getAccessToken to obtain a JWT, then
+    send "Authorization: Bearer <JWT>" on calls to api-console.paytweed.com.
+    Docs advise regenerating the JWT only on expiry, not per call.
+  docs: https://docs.paytweed.com/developer-tools/api/api-v1
+  sources:
+  - https://docs.paytweed.com/developer-tools/api/api-v1
+notes: >-
+  No OAuth2/OIDC surface (no oauth2 securityScheme; openid-configuration
+  absent). API keys are managed in the dashboard; the V2 API also exposes
+  key management operations (AuthController_generateApiToken,
+  AuthController_getApiKeys, AuthController_deleteApiKey). End-user wallet
+  auth in the SDKs is a separate social-login flow (Google) handled by the
+  core SDKs, not an API credential.

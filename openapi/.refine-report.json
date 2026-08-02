@@ -1,0 +1,34 @@
+{
+  "provider": "tweed",
+  "sources": [
+    "tweed-assets-api-openapi.yml",
+    "tweed-audit-event-mappings-api-openapi.yml",
+    "tweed-auth-api-openapi.yml",
+    "tweed-blockchains-api-openapi.yml",
+    "tweed-checkout-api-openapi.yml",
+    "tweed-contracts-api-openapi.yml",
+    "tweed-items-api-openapi.yml",
+    "tweed-payouts-api-openapi.yml",
+    "tweed-platform-webhooks-api-openapi.yml",
+    "tweed-rate-api-openapi.yml",
+    "tweed-tickets-api-openapi.yml"
+  ],
+  "outputs": [
+    "tweed-assets-api-openapi.yml",
+    "tweed-audit-event-mappings-api-openapi.yml",
+    "tweed-auth-api-openapi.yml",
+    "tweed-blockchains-api-openapi.yml",
+    "tweed-checkout-api-openapi.yml",
+    "tweed-contracts-api-openapi.yml",
+    "tweed-items-api-openapi.yml",
+    "tweed-payouts-api-openapi.yml",
+    "tweed-platform-webhooks-api-openapi.yml",
+    "tweed-rate-api-openapi.yml",
+    "tweed-tickets-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

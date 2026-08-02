@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.paytweed.com/developer-tools/tweed-sdks
+notes: >-
+  Tweed's client-side surface is delivered through its frontend SDKs, which
+  render hosted/prebuilt UI (checkout widget, wallet modals) inside the
+  platform's app; there is no separate web-components library.
+families:
+  - family: Token Checkout widget
+    description: >-
+      Interactive token/NFT checkout modal presented to buyers (card, Apple
+      Pay, Google Pay), initiated from the frontend SDK (buyWithFiat) or via
+      backend-generated payment links; fee breakdown is shown to the buyer
+      before confirmation.
+    loader_libraries:
+      - "@paytweed/frontend-sdk"
+      - "@paytweed/frontend-sdk-react"
+    docs: https://docs.paytweed.com/getting-started/token-checkout-or-payments
+  - family: Embedded wallet UI
+    description: >-
+      White-label, customizable self-custodial wallet experience (creation,
+      recovery via social login, transaction signing modals) embedded via the
+      core SDKs; palette/appearance controlled with setPaletteMode and
+      dashboard UI-customization settings.
+    loader_libraries:
+      - "@paytweed/core-js"
+      - "@paytweed/core-react"
+      - "@paytweed/core-vue"
+    docs: https://docs.paytweed.com/getting-started/embedded-wallets-or-waas
+  - family: Wagmi connector
+    description: >-
+      External integration exposing Tweed wallets as a wagmi connector for
+      EVM dApps (EIP-1193 provider).
+    docs: https://docs.paytweed.com/developer-tools/external-integrations/wagmi-connector

@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.paytweed.com/developer-tools/supported-blockchains
+environments:
+  - name: production
+    sdk_value: Environment.production
+    notes: Production integrations use Environment.production in the core SDKs.
+  - name: demo
+    sdk_value: Environment.demo
+    notes: >-
+      Demo/test integrations use Environment.demo; demo mode runs against
+      testnet chains only.
+demo_chains:
+  # Chains flagged "Demo" on the supported-blockchains page (testnets)
+  - { id: arbitrumSepolia, name: Arbitrum Sepolia Testnet }
+  - { id: avaxFuji, name: Avax Fuji Testnet }
+  - { id: beamTestnet, name: Beam Testnet }
+  - { id: bnbTestnet, name: BNB Testnet }
+  - { id: ethereumSepolia, name: Ethereum Sepolia Testnet }
+  - { id: fantomTestnet, name: Fantom Testnet }
+  - { id: fuseSpark, name: Fuse Spark Testnet }
+  - { id: polygonMumbai, name: Polygon Mumbai Testnet }
+  - { id: solanaDevnet, name: Solana Devnet }
+  - { id: tezosGhost, name: Tezos Ghost Testnet }
+live_examples:
+  - url: https://demo.paytweed.com
+    status: 200
+    notes: >-
+      Tweed's hosted demo (wallets + payments, free-minting and paid checkout
+      with ERC20 settlement). Source was published at
+      github.com/paytweed/demo-v2-next, which now returns 404.
+  - url: https://events.paytweed.com
+    status: 200
+    notes: Wallets + payments demo showcasing free minting.
+fixtures:
+  - name: demo NFT checkout variants
+    docs: https://docs.paytweed.com/developer-tools/tweed-sdks/payments-sdks-v1/backend-sdk-payments
+    notes: >-
+      The Backend SDK guide publishes demo checkout payloads (demo-freemint,
+      demo-paidmint-native at 0.01 MATIC, demo-paidmint-erc20 with a fake USDC
+      token) on the polygonAmoy chain, including a hosted demo token image at
+      paytweed-assets.s3.amazonaws.com/pinky.png.
+notes: >-
+  No magic test card numbers are published; card payments are processed via
+  Stripe under the hood (docs reference Stripe Radar and Stripe-shaped
+  paymentData in webhook payloads). Test-vs-live separation is by SDK
+  environment (demo vs production) and testnet chain selection rather than by
+  key prefix.

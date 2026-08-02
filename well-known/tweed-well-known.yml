@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: searched
+notes: >-
+  Probed the /.well-known/ discovery surface on every live Tweed host on
+  2026-07-21. No well-known documents are published: the docs host returns
+  404 for all paths, the v2 API host blocks with 403, dashboard.paytweed.com
+  does not resolve (connection failure), and the marketing site
+  www.paytweed.com serves a Framer "Site Not Found" page. Absence recorded as
+  valid probe data; no raw files saved (nothing returned 200).
+hosts:
+  - host: https://docs.paytweed.com
+    documents:
+      - { path: /.well-known/security.txt, status: 404 }
+      - { path: /.well-known/openid-configuration, status: 404 }
+      - { path: /.well-known/oauth-authorization-server, status: 404 }
+      - { path: /.well-known/api-catalog, status: 404 }
+      - { path: /.well-known/ai-plugin.json, status: 404 }
+  - host: https://api-v2.prod.paytweed.com
+    documents:
+      - { path: /.well-known/security.txt, status: 403 }
+      - { path: /.well-known/openid-configuration, status: 403 }
+      - { path: /.well-known/oauth-authorization-server, status: 403 }
+      - { path: /.well-known/api-catalog, status: 403 }
+      - { path: /.well-known/ai-plugin.json, status: 403 }
+  - host: https://api-console.paytweed.com
+    documents:
+      - { path: /.well-known/security.txt, status: 404 }
+      - { path: /.well-known/openid-configuration, status: 404 }
+      - { path: /.well-known/oauth-authorization-server, status: 404 }
+      - { path: /.well-known/api-catalog, status: 404 }
+      - { path: /.well-known/ai-plugin.json, status: 404 }
+  - host: https://www.paytweed.com
+    documents:
+      - { path: /.well-known/security.txt, status: 404 }
+      - { path: /.well-known/openid-configuration, status: 404 }
+      - { path: /.well-known/oauth-authorization-server, status: 404 }
+      - { path: /.well-known/api-catalog, status: 404 }
+      - { path: /.well-known/ai-plugin.json, status: 404 }
+  - host: https://dashboard.paytweed.com
+    documents:
+      - { path: /.well-known/security.txt, status: 0, note: host does not resolve }

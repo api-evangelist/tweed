@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.paytweed.com/developer-tools/webhooks
+type: Webhooks
+notes: >-
+  Tweed publishes no AsyncAPI document; this captures the documented webhook
+  surface. Webhooks are configured in the Management Dashboard
+  (dashboard.paytweed.com/webhooks) or via the V2 platform-webhooks API
+  (addPlatformWebhook / updatePlatformWebhook / setActivePlatformWebhook).
+delivery:
+  transport: HTTPS POST to a publicly accessible endpoint
+  headers:
+    - name: X-Tweed-Hook-ID
+      description: unique, stable id of the webhook configuration
+    - name: X-Tweed-Event
+      description: event identifier for the delivery
+    - name: X-Tweed-Delivery
+      description: unique delivery id; ignore duplicates to prevent replays
+    - name: X-Hub-Signature-256
+      description: >-
+        optional HMAC-SHA256 signature ("sha256=<hex>") of the payload using
+        the webhook's signing secret; verify with a timing-safe comparison
+  signing:
+    scheme: HMAC-SHA256 shared signing secret (GitHub-style)
+events:
+  - name: CHECKOUT_STATUS_UPDATED
+    docs: https://docs.paytweed.com/developer-tools/webhooks/checkout-webhooks
+    description: >-
+      Fired as a checkout progresses; payload carries checkoutData
+      (checkoutId, quantity, price, customParams), the CheckoutStatus, and
+      Stripe-shaped paymentData (amount, currency, card details, metadata with
+      chain_id / request_id / transaction_hash).
+    statuses:
+      - CREATED
+      - PERFORM_CHECKOUT_SUBMITTED
+      - TRANSACTION_BROADCAST
+      - DONE
+      - FAILED
+      - FAILED_AFTER_TX_COMPLETED
+management_api:
+  - operation: getPlatformWebhooks
+    path: GET /v1/platform-webhooks
+  - operation: addPlatformWebhook
+    path: POST /v1/platform-webhooks
+  - operation: updatePlatformWebhook
+    path: PUT /v1/platform-webhooks/{id}
+  - operation: deletePlatformWebhook
+    path: DELETE /v1/platform-webhooks/{id}
+  - operation: setActivePlatformWebhook
+    path: POST /v1/platform-webhooks/{id}/set-active
