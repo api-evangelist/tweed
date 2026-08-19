@@ -1,0 +1,371 @@
+{
+  "item": [
+    {
+      "id": "f2eb1468-196c-41ca-900c-d3543762a35e",
+      "name": "checkout",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "69e8306e-fadf-4294-9ddc-171cda6a31bb",
+          "name": "Get the price of an item",
+          "request": {
+            "name": "Get the price of an item",
+            "description": {},
+            "url": {
+              "path": [
+                "checkout",
+                "transaction-price"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"itemId\": \"<string>\",\n  \"customParams\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6648bc0a-4ba2-4188-81d2-94bacfaae688",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "checkout",
+                    "transaction-price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"itemId\": \"<string>\",\n  \"customParams\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalTransactionPriceUSD\": 9238.45981883458,\n  \"singleItemPriceUSD\": 4831.286596385861,\n  \"includedFees\": 5683.9535822627195,\n  \"gasFee\": 6848.6712827320125\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "000c641d-3541-45df-ad85-a60fddee6342",
+          "name": "Checkout Controller create Checkout Intent",
+          "request": {
+            "name": "Checkout Controller create Checkout Intent",
+            "description": {},
+            "url": {
+              "path": [
+                "checkout",
+                "create-intent"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"itemId\": \"<string>\",\n  \"quantity\": \"<number>\",\n  \"userWalletAddress\": \"<string>\",\n  \"receiptEmail\": \"<string>\",\n  \"customParams\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5c4cba47-8afa-4180-8f05-0992e92f9dc6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "checkout",
+                    "create-intent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"itemId\": \"<string>\",\n  \"quantity\": \"<number>\",\n  \"userWalletAddress\": \"<string>\",\n  \"receiptEmail\": \"<string>\",\n  \"customParams\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"checkoutId\": \"string\",\n  \"status\": \"string\",\n  \"clientSecret\": \"string\",\n  \"price\": {\n    \"totalTransactionPriceUSD\": 1791.8372567175288,\n    \"singleItemPriceUSD\": 2007.7990191996798,\n    \"includedFees\": 8424.066588431608,\n    \"gasFee\": 9001.21484783652\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e10ae206-5f2c-401b-84ea-af12dd371e61",
+          "name": "Checkout Controller perform Checkout",
+          "request": {
+            "name": "Checkout Controller perform Checkout",
+            "description": {},
+            "url": {
+              "path": [
+                "checkout",
+                "perform-checkout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"checkoutId\": \"<string>\",\n  \"customParams\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "54ad3bc9-0676-45f6-a16a-a9db4b1a9f25",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "checkout",
+                    "perform-checkout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"checkoutId\": \"<string>\",\n  \"customParams\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"checkoutId\": \"string\",\n  \"kyc\": {\n    \"kycStatus\": \"REQUIRED\",\n    \"kycFactor\": \"PAYMENT_METHOD_FINGERPRINT_CUMULATIVE\",\n    \"kycLink\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4b5a1bc-7cff-4d59-965b-19a66b27978c",
+          "name": "Get checkout by ID",
+          "request": {
+            "name": "Get checkout by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "checkout",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26938924-d5d7-4e3f-9452-ad3d2fb2fa00",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "checkout",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "050d2ed6-030c-4da9-b352-c5a66fa374e8",
+    "name": "Tweed assets checkout API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

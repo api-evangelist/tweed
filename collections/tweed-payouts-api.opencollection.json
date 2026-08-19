@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tweed assets payouts API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "payouts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get payout by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/payouts/:payoutId",
+            "params": [
+              {
+                "name": "payoutId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get payout by ID"
+        },
+        {
+          "info": {
+            "name": "Get all payouts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/payouts"
+          },
+          "docs": "Get all payouts"
+        },
+        {
+          "info": {
+            "name": "Add payout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/payouts/add",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add payout"
+        },
+        {
+          "info": {
+            "name": "Delete payout",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/payouts/payout/:payoutId",
+            "params": [
+              {
+                "name": "payoutId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete payout"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,129 @@
+{
+  "item": [
+    {
+      "id": "4aaa8265-e763-45bd-975b-ceb594c05688",
+      "name": "tickets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6c7d0ece-cc08-4ef1-a74e-b96a34b38905",
+          "name": "Create a new support ticket",
+          "request": {
+            "name": "Create a new support ticket",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "tickets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contactEmail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"message\": \"<string>\",\n  \"platformName\": \"<string>\",\n  \"memberName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b5fa6ed4-cf1b-4863-acbc-0611430fadd1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tickets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contactEmail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"message\": \"<string>\",\n  \"platformName\": \"<string>\",\n  \"memberName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ea5480c1-5276-4e59-aa2a-445120c6d6fc",
+    "name": "Tweed assets tickets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

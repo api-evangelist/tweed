@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tweed assets checkout API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "checkout",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the price of an item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/checkout/transaction-price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the price of an item"
+        },
+        {
+          "info": {
+            "name": "CheckoutController_createCheckoutIntent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/checkout/create-intent",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "CheckoutController_performCheckout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/checkout/perform-checkout",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Get checkout by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/checkout/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get checkout by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

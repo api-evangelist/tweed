@@ -1,0 +1,130 @@
+{
+  "item": [
+    {
+      "id": "26b2a4b2-7e9d-4500-8d69-3dc15118c72d",
+      "name": "audit-event-mappings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cc8659c6-7948-4bce-94b4-eb704f0087f7",
+          "name": "get Audit Event Mappings",
+          "request": {
+            "name": "get Audit Event Mappings",
+            "description": {
+              "content": "Get audit event mappings",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "audit-event-mappings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "auditType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "db8340db-efad-4e74-a7e1-7ce723799344",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "audit-event-mappings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "auditType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"eventId\": \"string\",\n    \"auditType\": \"WEBHOOK\",\n    \"description\": \"string\",\n    \"createdAt\": \"1972-10-24T01:11:35.510Z\",\n    \"lastUpdatedAt\": \"1957-05-25T11:11:34.477Z\"\n  },\n  {\n    \"eventId\": \"string\",\n    \"auditType\": \"SLACK\",\n    \"description\": \"string\",\n    \"createdAt\": \"1954-11-13T11:20:55.366Z\",\n    \"lastUpdatedAt\": \"2008-01-25T00:17:40.945Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "de2bed0c-997a-4f0d-9a4e-244cc0c65668",
+    "name": "Tweed assets audit-event-mappings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

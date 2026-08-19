@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tweed assets audit-event-mappings API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "audit-event-mappings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getAuditEventMappings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/audit-event-mappings",
+            "params": [
+              {
+                "name": "auditType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get audit event mappings"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

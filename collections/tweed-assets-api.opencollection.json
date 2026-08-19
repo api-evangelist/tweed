@@ -1,0 +1,99 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tweed assets API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "assets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get an asset by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/assets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an asset by id"
+        },
+        {
+          "info": {
+            "name": "Get all assets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/assets"
+          },
+          "docs": "Get all assets"
+        },
+        {
+          "info": {
+            "name": "Get assets by blockchain id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/assets/blockchain/:blockchainId",
+            "params": [
+              {
+                "name": "blockchainId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "stableCoinOnly",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get assets by blockchain id"
+        },
+        {
+          "info": {
+            "name": "Get all asset blockchains",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/assets/all/blockchains"
+          },
+          "docs": "Get all asset blockchains"
+        },
+        {
+          "info": {
+            "name": "Get an asset blockchain by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/assets/assetBlockchain/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an asset blockchain by id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

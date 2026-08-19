@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tweed assets blockchains API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "blockchains",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a blockchain by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/blockchains/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a blockchain by id"
+        },
+        {
+          "info": {
+            "name": "Get all blockchains",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/blockchains"
+          },
+          "docs": "Get all blockchains"
+        },
+        {
+          "info": {
+            "name": "Get multiple blockchains by ids",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/blockchains/multiple/:ids",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get multiple blockchains by ids"
+        },
+        {
+          "info": {
+            "name": "Get native asset for a blockchain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/blockchains/native-asset/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get native asset for a blockchain"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

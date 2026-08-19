@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tweed assets tickets API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "tickets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new support ticket",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/tickets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new support ticket"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

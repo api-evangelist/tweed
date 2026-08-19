@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tweed assets Rate API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rate",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "RateController_findOne",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/rate/:baseCurrencyId/:targetCurrencyId",
+            "params": [
+              {
+                "name": "baseCurrencyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "targetCurrencyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

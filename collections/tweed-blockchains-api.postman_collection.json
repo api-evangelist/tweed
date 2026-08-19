@@ -1,0 +1,429 @@
+{
+  "item": [
+    {
+      "id": "ef550f8b-0f95-40dc-bc8a-298ad49b15c7",
+      "name": "blockchains",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0b77b071-49a2-4369-b670-990c1ce00da4",
+          "name": "Get a blockchain by id",
+          "request": {
+            "name": "Get a blockchain by id",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "blockchains",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fe29830f-b9df-4463-abf8-6de06b203509",
+              "name": "A blockchain",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "blockchains",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"blockchainEcosystem\": {},\n  \"nativeCurrency\": {},\n  \"name\": \"string\",\n  \"isMainnet\": false,\n  \"rpcUrl\": \"string\",\n  \"iconUrl\": \"string\",\n  \"explorer\": {},\n  \"indexer\": {},\n  \"metadata\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca67bfcb-502a-44aa-a349-12bcf77284af",
+          "name": "Get all blockchains",
+          "request": {
+            "name": "Get all blockchains",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "blockchains"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "950a101a-c25c-4977-9e97-f356be813a93",
+              "name": "A list of available blockchains",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "blockchains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"blockchainEcosystem\": {},\n    \"nativeCurrency\": {},\n    \"name\": \"string\",\n    \"isMainnet\": false,\n    \"rpcUrl\": \"string\",\n    \"iconUrl\": \"string\",\n    \"explorer\": {},\n    \"indexer\": {},\n    \"metadata\": {}\n  },\n  {\n    \"id\": \"string\",\n    \"blockchainEcosystem\": {},\n    \"nativeCurrency\": {},\n    \"name\": \"string\",\n    \"isMainnet\": true,\n    \"rpcUrl\": \"string\",\n    \"iconUrl\": \"string\",\n    \"explorer\": {},\n    \"indexer\": {},\n    \"metadata\": {}\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b17df1e-4f51-4ab5-910a-5792ef80289a",
+          "name": "Get multiple blockchains by ids",
+          "request": {
+            "name": "Get multiple blockchains by ids",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "blockchains",
+                "multiple",
+                ":ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ids",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9a1085ad-1b42-4ee4-9900-0551c544f7ed",
+              "name": "A list of blockchains",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "blockchains",
+                    "multiple",
+                    ":ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ids",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"blockchainEcosystem\": {},\n    \"nativeCurrency\": {},\n    \"name\": \"string\",\n    \"isMainnet\": false,\n    \"rpcUrl\": \"string\",\n    \"iconUrl\": \"string\",\n    \"explorer\": {},\n    \"indexer\": {},\n    \"metadata\": {}\n  },\n  {\n    \"id\": \"string\",\n    \"blockchainEcosystem\": {},\n    \"nativeCurrency\": {},\n    \"name\": \"string\",\n    \"isMainnet\": true,\n    \"rpcUrl\": \"string\",\n    \"iconUrl\": \"string\",\n    \"explorer\": {},\n    \"indexer\": {},\n    \"metadata\": {}\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0bcf2dc6-28c8-442f-a83f-708aa6507349",
+          "name": "Get native asset for a blockchain",
+          "request": {
+            "name": "Get native asset for a blockchain",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "blockchains",
+                "native-asset",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "450b4a7a-ed8b-4a37-98a4-44eb95831e1a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "blockchains",
+                    "native-asset",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"symbol\": \"string\",\n  \"iconUrl\": \"string\",\n  \"defaultDecimals\": 1814.1076300820669,\n  \"isStablecoin\": true,\n  \"defaultContractAddress\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bc6846f9-80b8-46f2-ab55-b95efc3a61e9",
+    "name": "Tweed assets blockchains API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
