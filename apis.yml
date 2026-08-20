@@ -66,6 +66,8 @@ apis:
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
+  - Assets
+  tags_raw:
   - assets
   properties:
   - type: OpenAPI
@@ -94,6 +96,8 @@ apis:
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
+  - Authentication
+  tags_raw:
   - auth
   properties:
   - type: OpenAPI
@@ -108,6 +112,8 @@ apis:
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
+  - Blockchains
+  tags_raw:
   - blockchains
   properties:
   - type: OpenAPI
@@ -122,6 +128,8 @@ apis:
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
+  - Checkout
+  tags_raw:
   - checkout
   properties:
   - type: OpenAPI
@@ -136,6 +144,8 @@ apis:
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
+  - Contracts
+  tags_raw:
   - contracts
   properties:
   - type: OpenAPI
@@ -150,6 +160,8 @@ apis:
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
+  - Item
+  tags_raw:
   - items
   properties:
   - type: OpenAPI
@@ -164,6 +176,8 @@ apis:
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
+  - Payouts
+  tags_raw:
   - payouts
   properties:
   - type: OpenAPI
@@ -206,6 +220,8 @@ apis:
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
+  - Tickets
+  tags_raw:
   - tickets
   properties:
   - type: OpenAPI
