@@ -124,7 +124,7 @@ apis:
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
-  - Blockchains
+  - blockchains
   tags_raw:
   - blockchains
   properties:
@@ -140,7 +140,7 @@ apis:
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
-  - Checkout
+  - checkout
   tags_raw:
   - checkout
   properties:
@@ -156,7 +156,7 @@ apis:
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
-  - Contracts
+  - contracts
   tags_raw:
   - contracts
   properties:
