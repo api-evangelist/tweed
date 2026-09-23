@@ -1,12 +1,12 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Tweed assets API
+  title: Tweed Assets API
   description: ''
   version: '1.0'
   contact: {}
 servers: []
 tags:
-- name: assets
+- name: Assets
 paths:
   /v1/assets/{id}:
     get:
@@ -26,7 +26,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/AssetDto'
       tags:
-      - assets
+      - Assets
       security:
       - bearer: []
   /v1/assets:
@@ -44,7 +44,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/AssetDto'
       tags:
-      - assets
+      - Assets
       security:
       - bearer: []
   /v1/assets/blockchain/{blockchainId}:
@@ -66,7 +66,7 @@ paths:
         '200':
           description: ''
       tags:
-      - assets
+      - Assets
       security:
       - bearer: []
   /v1/assets/all/blockchains:
@@ -84,7 +84,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/AssetBlockchainDto'
       tags:
-      - assets
+      - Assets
       security:
       - bearer: []
   /v1/assets/assetBlockchain/{id}:
@@ -105,36 +105,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/AssetBlockchainDto'
       tags:
-      - assets
+      - Assets
       security:
       - bearer: []
 components:
   schemas:
-    AssetDto:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        symbol:
-          type: string
-        iconUrl:
-          type: string
-        defaultDecimals:
-          type: number
-        isStablecoin:
-          type: boolean
-        defaultContractAddress:
-          type: string
-      required:
-      - id
-      - name
-      - symbol
-      - iconUrl
-      - defaultDecimals
-      - isStablecoin
-      - defaultContractAddress
     AssetBlockchainDto:
       type: object
       properties:
@@ -164,6 +139,31 @@ components:
       - contractAddress
       - decimals
       - Tokentype
+    AssetDto:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        symbol:
+          type: string
+        iconUrl:
+          type: string
+        defaultDecimals:
+          type: number
+        isStablecoin:
+          type: boolean
+        defaultContractAddress:
+          type: string
+      required:
+      - id
+      - name
+      - symbol
+      - iconUrl
+      - defaultDecimals
+      - isStablecoin
+      - defaultContractAddress
   securitySchemes:
     bearer:
       scheme: Bearer

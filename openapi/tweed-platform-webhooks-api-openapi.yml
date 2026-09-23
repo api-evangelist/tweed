@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Tweed assets platform-webhooks API
+  title: Tweed Platform Webhooks API
   description: ''
   version: '1.0'
   contact: {}
@@ -11,7 +11,7 @@ paths:
   /v1/platform-webhooks:
     get:
       operationId: getPlatformWebhooks
-      summary: ''
+      summary: Get platform webhooks
       parameters: []
       responses:
         '200':
@@ -26,9 +26,10 @@ paths:
       - platform-webhooks
       security:
       - bearer: []
+      x-summary-source: derived
     post:
       operationId: addPlatformWebhook
-      summary: ''
+      summary: Add platform webhook
       parameters: []
       requestBody:
         required: true
@@ -43,10 +44,11 @@ paths:
       - platform-webhooks
       security:
       - bearer: []
+      x-summary-source: derived
   /v1/platform-webhooks/{id}:
     put:
       operationId: updatePlatformWebhook
-      summary: ''
+      summary: Update platform webhook
       parameters:
       - name: id
         required: true
@@ -66,9 +68,10 @@ paths:
       - platform-webhooks
       security:
       - bearer: []
+      x-summary-source: derived
     delete:
       operationId: deletePlatformWebhook
-      summary: ''
+      summary: Delete platform webhook
       parameters:
       - name: id
         required: true
@@ -82,10 +85,11 @@ paths:
       - platform-webhooks
       security:
       - bearer: []
+      x-summary-source: derived
   /v1/platform-webhooks/{id}/set-active:
     post:
       operationId: setActivePlatformWebhook
-      summary: ''
+      summary: Set active platform webhook
       parameters:
       - name: id
         required: true
@@ -105,6 +109,7 @@ paths:
       - platform-webhooks
       security:
       - bearer: []
+      x-summary-source: derived
 components:
   schemas:
     SetPlatformWebhookActiveDto:
@@ -114,6 +119,17 @@ components:
           type: boolean
       required:
       - isActive
+    UpdatePlatformWebhookDto:
+      type: object
+      properties:
+        url:
+          type: string
+        events:
+          type: array
+          items:
+            type: string
+        secret:
+          type: string
     PlatformWebhookDto:
       type: object
       properties:
@@ -152,17 +168,6 @@ components:
       required:
       - url
       - events
-    UpdatePlatformWebhookDto:
-      type: object
-      properties:
-        url:
-          type: string
-        events:
-          type: array
-          items:
-            type: string
-        secret:
-          type: string
   securitySchemes:
     bearer:
       scheme: Bearer

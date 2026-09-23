@@ -1,12 +1,12 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Tweed assets payouts API
+  title: Tweed Payouts API
   description: ''
   version: '1.0'
   contact: {}
 servers: []
 tags:
-- name: payouts
+- name: Payouts
 paths:
   /v1/payouts/{payoutId}:
     get:
@@ -22,7 +22,7 @@ paths:
         '200':
           description: ''
       tags:
-      - payouts
+      - Payouts
       security:
       - bearer: []
   /v1/payouts:
@@ -34,7 +34,7 @@ paths:
         '200':
           description: ''
       tags:
-      - payouts
+      - Payouts
       security:
       - bearer: []
   /v1/payouts/add:
@@ -52,7 +52,7 @@ paths:
         '201':
           description: ''
       tags:
-      - payouts
+      - Payouts
       security:
       - bearer: []
   /v1/payouts/payout/{payoutId}:
@@ -69,7 +69,7 @@ paths:
         '200':
           description: ''
       tags:
-      - payouts
+      - Payouts
       security:
       - bearer: []
 components:

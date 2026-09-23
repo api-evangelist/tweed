@@ -1,12 +1,12 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Tweed assets tickets API
+  title: Tweed Tickets API
   description: ''
   version: '1.0'
   contact: {}
 servers: []
 tags:
-- name: tickets
+- name: Tickets
 paths:
   /v1/tickets:
     post:
@@ -23,7 +23,7 @@ paths:
         '201':
           description: ''
       tags:
-      - tickets
+      - Tickets
       security:
       - bearer: []
 components:

@@ -1,12 +1,12 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Tweed assets checkout API
+  title: Tweed Checkout API
   description: ''
   version: '1.0'
   contact: {}
 servers: []
 tags:
-- name: checkout
+- name: Checkout
 paths:
   /checkout/transaction-price:
     post:
@@ -27,7 +27,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ItemPriceResponseDto'
       tags:
-      - checkout
+      - Checkout
   /checkout/create-intent:
     post:
       operationId: CheckoutController_createCheckoutIntent
@@ -46,7 +46,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/CheckoutIntentResponseDto'
       tags:
-      - checkout
+      - Checkout
+      summary: Checkout controller create checkout intent
+      x-summary-source: derived
   /checkout/perform-checkout:
     post:
       operationId: CheckoutController_performCheckout
@@ -65,7 +67,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/PerformCheckoutResponseDto'
       tags:
-      - checkout
+      - Checkout
+      summary: Checkout controller perform checkout
+      x-summary-source: derived
   /checkout/{id}:
     get:
       operationId: getCheckoutById
@@ -80,25 +84,9 @@ paths:
         '200':
           description: ''
       tags:
-      - checkout
+      - Checkout
 components:
   schemas:
-    ItemPriceResponseDto:
-      type: object
-      properties:
-        totalTransactionPriceUSD:
-          type: number
-        singleItemPriceUSD:
-          type: number
-        includedFees:
-          type: number
-        gasFee:
-          type: number
-      required:
-      - totalTransactionPriceUSD
-      - singleItemPriceUSD
-      - includedFees
-      - gasFee
     CheckoutIntentRequestDto:
       type: object
       properties:
@@ -117,6 +105,65 @@ components:
       - quantity
       - userWalletAddress
       - receiptEmail
+    PerformCheckoutRequestDto:
+      type: object
+      properties:
+        checkoutId:
+          type: string
+        customParams:
+          type: object
+      required:
+      - checkoutId
+    ItemPriceResponseDto:
+      type: object
+      properties:
+        totalTransactionPriceUSD:
+          type: number
+        singleItemPriceUSD:
+          type: number
+        includedFees:
+          type: number
+        gasFee:
+          type: number
+      required:
+      - totalTransactionPriceUSD
+      - singleItemPriceUSD
+      - includedFees
+      - gasFee
+    PerformCheckoutResponseDto:
+      type: object
+      properties:
+        checkoutId:
+          type: string
+        kyc:
+          $ref: '#/components/schemas/KycDto'
+      required:
+      - checkoutId
+    CheckoutIntentResponseDto:
+      type: object
+      properties:
+        checkoutId:
+          type: string
+        status:
+          type: string
+        clientSecret:
+          type: string
+        price:
+          $ref: '#/components/schemas/ItemPriceResponseDto'
+      required:
+      - checkoutId
+      - status
+      - clientSecret
+      - price
+    ItemPriceRequestDto:
+      type: object
+      properties:
+        itemId:
+          type: string
+        customParams:
+          type: object
+      required:
+      - itemId
     KycDto:
       type: object
       properties:
@@ -138,49 +185,6 @@ components:
           type: string
       required:
       - kycStatus
-    PerformCheckoutResponseDto:
-      type: object
-      properties:
-        checkoutId:
-          type: string
-        kyc:
-          $ref: '#/components/schemas/KycDto'
-      required:
-      - checkoutId
-    PerformCheckoutRequestDto:
-      type: object
-      properties:
-        checkoutId:
-          type: string
-        customParams:
-          type: object
-      required:
-      - checkoutId
-    ItemPriceRequestDto:
-      type: object
-      properties:
-        itemId:
-          type: string
-        customParams:
-          type: object
-      required:
-      - itemId
-    CheckoutIntentResponseDto:
-      type: object
-      properties:
-        checkoutId:
-          type: string
-        status:
-          type: string
-        clientSecret:
-          type: string
-        price:
-          $ref: '#/components/schemas/ItemPriceResponseDto'
-      required:
-      - checkoutId
-      - status
-      - clientSecret
-      - price
   securitySchemes:
     bearer:
       scheme: Bearer

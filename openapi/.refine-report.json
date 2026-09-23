@@ -1,19 +1,10 @@
 {
   "provider": "tweed",
   "sources": [
-    "tweed-assets-api-openapi.yml",
-    "tweed-audit-event-mappings-api-openapi.yml",
-    "tweed-auth-api-openapi.yml",
-    "tweed-blockchains-api-openapi.yml",
-    "tweed-checkout-api-openapi.yml",
-    "tweed-contracts-api-openapi.yml",
-    "tweed-items-api-openapi.yml",
-    "tweed-payouts-api-openapi.yml",
-    "tweed-platform-webhooks-api-openapi.yml",
-    "tweed-rate-api-openapi.yml",
-    "tweed-tickets-api-openapi.yml"
+    "_original/tweed-api-v2-openapi-original.json"
   ],
   "outputs": [
+    "tweed-rate-api-openapi.yml",
     "tweed-assets-api-openapi.yml",
     "tweed-audit-event-mappings-api-openapi.yml",
     "tweed-auth-api-openapi.yml",
@@ -23,12 +14,39 @@
     "tweed-items-api-openapi.yml",
     "tweed-payouts-api-openapi.yml",
     "tweed-platform-webhooks-api-openapi.yml",
-    "tweed-rate-api-openapi.yml",
     "tweed-tickets-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "tweed-api-v2-openapi-original.json: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "tweed-api-v2-openapi-original.json: tagged paths GET /rate/{baseCurrencyId}/{targetCurrencyId} -> Rate",
+    "tweed-api-v2-openapi-original.json: declared missing tag: Rate",
+    "tweed-api-v2-openapi-original.json: declared missing tag: assets",
+    "tweed-api-v2-openapi-original.json: declared missing tag: audit-event-mappings",
+    "tweed-api-v2-openapi-original.json: declared missing tag: auth",
+    "tweed-api-v2-openapi-original.json: declared missing tag: blockchains",
+    "tweed-api-v2-openapi-original.json: declared missing tag: checkout",
+    "tweed-api-v2-openapi-original.json: declared missing tag: contracts",
+    "tweed-api-v2-openapi-original.json: declared missing tag: items",
+    "tweed-api-v2-openapi-original.json: declared missing tag: payouts",
+    "tweed-api-v2-openapi-original.json: declared missing tag: platform-webhooks",
+    "tweed-api-v2-openapi-original.json: declared missing tag: tickets",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "tweed-assets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tweed-audit-event-mappings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tweed-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tweed-blockchains-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tweed-checkout-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tweed-contracts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tweed-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tweed-payouts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tweed-platform-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tweed-rate-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tweed-tickets-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

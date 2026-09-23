@@ -1,12 +1,12 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Tweed assets contracts API
+  title: Tweed Contracts API
   description: ''
   version: '1.0'
   contact: {}
 servers: []
 tags:
-- name: contracts
+- name: Contracts
 paths:
   /v1/contracts/{contractId}:
     get:
@@ -22,7 +22,7 @@ paths:
         '200':
           description: ''
       tags:
-      - contracts
+      - Contracts
       security:
       - bearer: []
   /v1/contracts:
@@ -34,7 +34,7 @@ paths:
         '200':
           description: ''
       tags:
-      - contracts
+      - Contracts
       security:
       - bearer: []
   /v1/contracts/add:
@@ -52,7 +52,7 @@ paths:
         '201':
           description: ''
       tags:
-      - contracts
+      - Contracts
       security:
       - bearer: []
   /v1/contracts/add-contract-function:
@@ -70,7 +70,7 @@ paths:
         '201':
           description: ''
       tags:
-      - contracts
+      - Contracts
       security:
       - bearer: []
   /v1/contracts/contract/{contractId}:
@@ -87,7 +87,7 @@ paths:
         '200':
           description: ''
       tags:
-      - contracts
+      - Contracts
       security:
       - bearer: []
 components:
