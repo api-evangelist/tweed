@@ -75,7 +75,7 @@ apis:
   - type: Documentation
     url: https://docs.paytweed.com/developer-tools/api/api-v1
 - aid: tweed:tweed-assets-api
-  name: Tweed assets API
+  name: Tweed Assets API
   description: The assets API from Tweed — 5 operation(s) for assets.
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
@@ -91,7 +91,7 @@ apis:
   - type: APIReference
     url: https://docs.paytweed.com/developer-tools/api/api-v2/api-reference
 - aid: tweed:tweed-audit-event-mappings-api
-  name: Tweed audit-event-mappings API
+  name: Tweed Audit Event Mappings API
   description: The audit-event-mappings API from Tweed — 1 operation(s) for audit-event-mappings.
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
@@ -105,7 +105,7 @@ apis:
   - type: APIReference
     url: https://docs.paytweed.com/developer-tools/api/api-v2/api-reference
 - aid: tweed:tweed-auth-api
-  name: Tweed auth API
+  name: Tweed Auth API
   description: The auth API from Tweed — 3 operation(s) for auth.
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
@@ -121,7 +121,7 @@ apis:
   - type: APIReference
     url: https://docs.paytweed.com/developer-tools/api/api-v2/api-reference
 - aid: tweed:tweed-blockchains-api
-  name: Tweed blockchains API
+  name: Tweed Blockchains API
   description: The blockchains API from Tweed — 4 operation(s) for blockchains.
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
@@ -137,7 +137,7 @@ apis:
   - type: APIReference
     url: https://docs.paytweed.com/developer-tools/api/api-v2/api-reference
 - aid: tweed:tweed-checkout-api
-  name: Tweed checkout API
+  name: Tweed Checkout API
   description: The checkout API from Tweed — 4 operation(s) for checkout.
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
@@ -153,7 +153,7 @@ apis:
   - type: APIReference
     url: https://docs.paytweed.com/developer-tools/api/api-v2/api-reference
 - aid: tweed:tweed-contracts-api
-  name: Tweed contracts API
+  name: Tweed Contracts API
   description: The contracts API from Tweed — 5 operation(s) for contracts.
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
@@ -169,7 +169,7 @@ apis:
   - type: APIReference
     url: https://docs.paytweed.com/developer-tools/api/api-v2/api-reference
 - aid: tweed:tweed-items-api
-  name: Tweed items API
+  name: Tweed Items API
   description: The items API from Tweed — 5 operation(s) for items.
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
@@ -185,7 +185,7 @@ apis:
   - type: APIReference
     url: https://docs.paytweed.com/developer-tools/api/api-v2/api-reference
 - aid: tweed:tweed-payouts-api
-  name: Tweed payouts API
+  name: Tweed Payouts API
   description: The payouts API from Tweed — 4 operation(s) for payouts.
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
@@ -201,7 +201,7 @@ apis:
   - type: APIReference
     url: https://docs.paytweed.com/developer-tools/api/api-v2/api-reference
 - aid: tweed:tweed-platform-webhooks-api
-  name: Tweed platform-webhooks API
+  name: Tweed Platform Webhooks API
   description: The platform-webhooks API from Tweed — 3 operation(s) for platform-webhooks.
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
@@ -229,14 +229,15 @@ apis:
   - type: APIReference
     url: https://docs.paytweed.com/developer-tools/api/api-v2/api-reference
 - aid: tweed:tweed-tickets-api
-  name: Tweed tickets API
+  name: Tweed Tickets API
   description: The tickets API from Tweed — 1 operation(s) for tickets.
   humanURL: https://docs.paytweed.com/developer-tools/api/api-v2
   baseURL: https://api-v2.prod.paytweed.com
   tags:
-  - Tickets
+  - Ticketing
   tags_raw:
   - tickets
+  - Tickets
   properties:
   - type: OpenAPI
     url: openapi/tweed-tickets-api-openapi.yml

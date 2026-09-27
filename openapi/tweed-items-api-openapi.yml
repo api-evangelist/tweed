@@ -111,6 +111,63 @@ paths:
       - bearer: []
 components:
   schemas:
+    ContractFunctionDto:
+      type: object
+      properties:
+        functionSignature:
+          type: string
+        fixedFunctionParams:
+          type: object
+        contract:
+          $ref: '#/components/schemas/ContractDto'
+      required:
+      - functionSignature
+      - fixedFunctionParams
+      - contract
+    ContractDto:
+      type: object
+      properties:
+        address:
+          type: string
+        blockchainId:
+          type: string
+        abi:
+          type: object
+      required:
+      - address
+      - blockchainId
+      - abi
+    ItemDto:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        currency:
+          type: string
+        price:
+          type: number
+        description:
+          type: string
+        imageUrl:
+          type: string
+        payout:
+          $ref: '#/components/schemas/PayoutDto'
+        contractFunction:
+          $ref: '#/components/schemas/ContractFunctionDto'
+        isMainnet:
+          type: boolean
+      required:
+      - id
+      - title
+      - currency
+      - price
+      - description
+      - imageUrl
+      - payout
+      - contractFunction
+      - isMainnet
     AddItemDto:
       type: object
       properties:
@@ -158,63 +215,6 @@ components:
       - stripeConnectedAccountId
       - assetId
       - spender
-    ContractDto:
-      type: object
-      properties:
-        address:
-          type: string
-        blockchainId:
-          type: string
-        abi:
-          type: object
-      required:
-      - address
-      - blockchainId
-      - abi
-    ItemDto:
-      type: object
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        currency:
-          type: string
-        price:
-          type: number
-        description:
-          type: string
-        imageUrl:
-          type: string
-        payout:
-          $ref: '#/components/schemas/PayoutDto'
-        contractFunction:
-          $ref: '#/components/schemas/ContractFunctionDto'
-        isMainnet:
-          type: boolean
-      required:
-      - id
-      - title
-      - currency
-      - price
-      - description
-      - imageUrl
-      - payout
-      - contractFunction
-      - isMainnet
-    ContractFunctionDto:
-      type: object
-      properties:
-        functionSignature:
-          type: string
-        fixedFunctionParams:
-          type: object
-        contract:
-          $ref: '#/components/schemas/ContractDto'
-      required:
-      - functionSignature
-      - fixedFunctionParams
-      - contract
   securitySchemes:
     bearer:
       scheme: Bearer

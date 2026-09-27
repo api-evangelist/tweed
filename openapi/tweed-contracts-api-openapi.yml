@@ -92,19 +92,6 @@ paths:
       - bearer: []
 components:
   schemas:
-    AddContractDto:
-      type: object
-      properties:
-        address:
-          type: string
-        blockchainId:
-          type: string
-        abi:
-          type: string
-      required:
-      - address
-      - blockchainId
-      - abi
     AddContractFunctionDto:
       type: object
       properties:
@@ -122,6 +109,19 @@ components:
       - contractId
       - functionSignature
       - fixedFunctionParams
+    AddContractDto:
+      type: object
+      properties:
+        address:
+          type: string
+        blockchainId:
+          type: string
+        abi:
+          type: string
+      required:
+      - address
+      - blockchainId
+      - abi
   securitySchemes:
     bearer:
       scheme: Bearer

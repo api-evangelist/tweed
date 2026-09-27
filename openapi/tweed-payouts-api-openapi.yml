@@ -84,13 +84,6 @@ components:
       required:
       - provider
       - paymentProviderId
-    AddNativePayoutDto:
-      type: object
-      properties:
-        blockchainId:
-          type: string
-      required:
-      - blockchainId
     AddStablecoinPayoutDto:
       type: object
       properties:
@@ -125,6 +118,13 @@ components:
       required:
       - type
       - name
+    AddNativePayoutDto:
+      type: object
+      properties:
+        blockchainId:
+          type: string
+      required:
+      - blockchainId
   securitySchemes:
     bearer:
       scheme: Bearer
