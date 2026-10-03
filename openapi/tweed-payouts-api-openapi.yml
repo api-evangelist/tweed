@@ -84,19 +84,6 @@ components:
       required:
       - provider
       - paymentProviderId
-    AddStablecoinPayoutDto:
-      type: object
-      properties:
-        blockchainId:
-          type: string
-        tokenId:
-          type: string
-        spender:
-          type: string
-      required:
-      - blockchainId
-      - tokenId
-      - spender
     AddPayoutDto:
       type: object
       properties:
@@ -125,6 +112,19 @@ components:
           type: string
       required:
       - blockchainId
+    AddStablecoinPayoutDto:
+      type: object
+      properties:
+        blockchainId:
+          type: string
+        tokenId:
+          type: string
+        spender:
+          type: string
+      required:
+      - blockchainId
+      - tokenId
+      - spender
   securitySchemes:
     bearer:
       scheme: Bearer

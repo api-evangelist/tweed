@@ -123,27 +123,6 @@ components:
             type: string
         secret:
           type: string
-    CreatePlatformWebhookDto:
-      type: object
-      properties:
-        url:
-          type: string
-        events:
-          type: array
-          items:
-            type: string
-        secret:
-          type: string
-      required:
-      - url
-      - events
-    SetPlatformWebhookActiveDto:
-      type: object
-      properties:
-        isActive:
-          type: boolean
-      required:
-      - isActive
     PlatformWebhookDto:
       type: object
       properties:
@@ -167,6 +146,27 @@ components:
       - id
       - url
       - isActive
+      - events
+    SetPlatformWebhookActiveDto:
+      type: object
+      properties:
+        isActive:
+          type: boolean
+      required:
+      - isActive
+    CreatePlatformWebhookDto:
+      type: object
+      properties:
+        url:
+          type: string
+        events:
+          type: array
+          items:
+            type: string
+        secret:
+          type: string
+      required:
+      - url
       - events
   securitySchemes:
     bearer:

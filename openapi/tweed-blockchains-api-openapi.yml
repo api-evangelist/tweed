@@ -93,6 +93,31 @@ paths:
       - bearer: []
 components:
   schemas:
+    AssetDto:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        symbol:
+          type: string
+        iconUrl:
+          type: string
+        defaultDecimals:
+          type: number
+        isStablecoin:
+          type: boolean
+        defaultContractAddress:
+          type: string
+      required:
+      - id
+      - name
+      - symbol
+      - iconUrl
+      - defaultDecimals
+      - isStablecoin
+      - defaultContractAddress
     FindBlockchainResponseDto:
       type: object
       properties:
@@ -127,31 +152,6 @@ components:
       - explorer
       - indexer
       - metadata
-    AssetDto:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        symbol:
-          type: string
-        iconUrl:
-          type: string
-        defaultDecimals:
-          type: number
-        isStablecoin:
-          type: boolean
-        defaultContractAddress:
-          type: string
-      required:
-      - id
-      - name
-      - symbol
-      - iconUrl
-      - defaultDecimals
-      - isStablecoin
-      - defaultContractAddress
   securitySchemes:
     bearer:
       scheme: Bearer

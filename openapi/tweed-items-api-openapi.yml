@@ -111,32 +111,6 @@ paths:
       - bearer: []
 components:
   schemas:
-    ContractFunctionDto:
-      type: object
-      properties:
-        functionSignature:
-          type: string
-        fixedFunctionParams:
-          type: object
-        contract:
-          $ref: '#/components/schemas/ContractDto'
-      required:
-      - functionSignature
-      - fixedFunctionParams
-      - contract
-    ContractDto:
-      type: object
-      properties:
-        address:
-          type: string
-        blockchainId:
-          type: string
-        abi:
-          type: object
-      required:
-      - address
-      - blockchainId
-      - abi
     ItemDto:
       type: object
       properties:
@@ -191,6 +165,32 @@ components:
       - priceCurrency
       - contractFunctionId
       - payoutId
+    ContractFunctionDto:
+      type: object
+      properties:
+        functionSignature:
+          type: string
+        fixedFunctionParams:
+          type: object
+        contract:
+          $ref: '#/components/schemas/ContractDto'
+      required:
+      - functionSignature
+      - fixedFunctionParams
+      - contract
+    ContractDto:
+      type: object
+      properties:
+        address:
+          type: string
+        blockchainId:
+          type: string
+        abi:
+          type: object
+      required:
+      - address
+      - blockchainId
+      - abi
     PayoutDto:
       type: object
       properties:

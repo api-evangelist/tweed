@@ -87,49 +87,6 @@ paths:
       - Checkout
 components:
   schemas:
-    ItemPriceResponseDto:
-      type: object
-      properties:
-        totalTransactionPriceUSD:
-          type: number
-        singleItemPriceUSD:
-          type: number
-        includedFees:
-          type: number
-        gasFee:
-          type: number
-      required:
-      - totalTransactionPriceUSD
-      - singleItemPriceUSD
-      - includedFees
-      - gasFee
-    PerformCheckoutRequestDto:
-      type: object
-      properties:
-        checkoutId:
-          type: string
-        customParams:
-          type: object
-      required:
-      - checkoutId
-    ItemPriceRequestDto:
-      type: object
-      properties:
-        itemId:
-          type: string
-        customParams:
-          type: object
-      required:
-      - itemId
-    PerformCheckoutResponseDto:
-      type: object
-      properties:
-        checkoutId:
-          type: string
-        kyc:
-          $ref: '#/components/schemas/KycDto'
-      required:
-      - checkoutId
     CheckoutIntentRequestDto:
       type: object
       properties:
@@ -148,6 +105,49 @@ components:
       - quantity
       - userWalletAddress
       - receiptEmail
+    PerformCheckoutRequestDto:
+      type: object
+      properties:
+        checkoutId:
+          type: string
+        customParams:
+          type: object
+      required:
+      - checkoutId
+    ItemPriceResponseDto:
+      type: object
+      properties:
+        totalTransactionPriceUSD:
+          type: number
+        singleItemPriceUSD:
+          type: number
+        includedFees:
+          type: number
+        gasFee:
+          type: number
+      required:
+      - totalTransactionPriceUSD
+      - singleItemPriceUSD
+      - includedFees
+      - gasFee
+    PerformCheckoutResponseDto:
+      type: object
+      properties:
+        checkoutId:
+          type: string
+        kyc:
+          $ref: '#/components/schemas/KycDto'
+      required:
+      - checkoutId
+    ItemPriceRequestDto:
+      type: object
+      properties:
+        itemId:
+          type: string
+        customParams:
+          type: object
+      required:
+      - itemId
     CheckoutIntentResponseDto:
       type: object
       properties:
