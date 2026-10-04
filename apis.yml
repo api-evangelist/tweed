@@ -251,6 +251,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/tweed-capability-edges.yml
+  name: Tweed Business Capability Map
 - type: Overlay
   url: overlays/tweed-api-v2-overlay.yaml
 - type: Website
