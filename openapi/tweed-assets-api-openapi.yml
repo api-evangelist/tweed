@@ -110,31 +110,6 @@ paths:
       - bearer: []
 components:
   schemas:
-    AssetDto:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        symbol:
-          type: string
-        iconUrl:
-          type: string
-        defaultDecimals:
-          type: number
-        isStablecoin:
-          type: boolean
-        defaultContractAddress:
-          type: string
-      required:
-      - id
-      - name
-      - symbol
-      - iconUrl
-      - defaultDecimals
-      - isStablecoin
-      - defaultContractAddress
     AssetBlockchainDto:
       type: object
       properties:
@@ -164,6 +139,31 @@ components:
       - contractAddress
       - decimals
       - Tokentype
+    AssetDto:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        symbol:
+          type: string
+        iconUrl:
+          type: string
+        defaultDecimals:
+          type: number
+        isStablecoin:
+          type: boolean
+        defaultContractAddress:
+          type: string
+      required:
+      - id
+      - name
+      - symbol
+      - iconUrl
+      - defaultDecimals
+      - isStablecoin
+      - defaultContractAddress
   securitySchemes:
     bearer:
       scheme: Bearer

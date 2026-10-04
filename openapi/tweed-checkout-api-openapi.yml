@@ -87,6 +87,40 @@ paths:
       - Checkout
 components:
   schemas:
+    PerformCheckoutResponseDto:
+      type: object
+      properties:
+        checkoutId:
+          type: string
+        kyc:
+          $ref: '#/components/schemas/KycDto'
+      required:
+      - checkoutId
+    PerformCheckoutRequestDto:
+      type: object
+      properties:
+        checkoutId:
+          type: string
+        customParams:
+          type: object
+      required:
+      - checkoutId
+    CheckoutIntentResponseDto:
+      type: object
+      properties:
+        checkoutId:
+          type: string
+        status:
+          type: string
+        clientSecret:
+          type: string
+        price:
+          $ref: '#/components/schemas/ItemPriceResponseDto'
+      required:
+      - checkoutId
+      - status
+      - clientSecret
+      - price
     CheckoutIntentRequestDto:
       type: object
       properties:
@@ -105,15 +139,6 @@ components:
       - quantity
       - userWalletAddress
       - receiptEmail
-    PerformCheckoutRequestDto:
-      type: object
-      properties:
-        checkoutId:
-          type: string
-        customParams:
-          type: object
-      required:
-      - checkoutId
     ItemPriceResponseDto:
       type: object
       properties:
@@ -130,15 +155,6 @@ components:
       - singleItemPriceUSD
       - includedFees
       - gasFee
-    PerformCheckoutResponseDto:
-      type: object
-      properties:
-        checkoutId:
-          type: string
-        kyc:
-          $ref: '#/components/schemas/KycDto'
-      required:
-      - checkoutId
     ItemPriceRequestDto:
       type: object
       properties:
@@ -148,22 +164,6 @@ components:
           type: object
       required:
       - itemId
-    CheckoutIntentResponseDto:
-      type: object
-      properties:
-        checkoutId:
-          type: string
-        status:
-          type: string
-        clientSecret:
-          type: string
-        price:
-          $ref: '#/components/schemas/ItemPriceResponseDto'
-      required:
-      - checkoutId
-      - status
-      - clientSecret
-      - price
     KycDto:
       type: object
       properties:

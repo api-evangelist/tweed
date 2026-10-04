@@ -112,17 +112,13 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    UpdatePlatformWebhookDto:
+    SetPlatformWebhookActiveDto:
       type: object
       properties:
-        url:
-          type: string
-        events:
-          type: array
-          items:
-            type: string
-        secret:
-          type: string
+        isActive:
+          type: boolean
+      required:
+      - isActive
     PlatformWebhookDto:
       type: object
       properties:
@@ -147,13 +143,6 @@ components:
       - url
       - isActive
       - events
-    SetPlatformWebhookActiveDto:
-      type: object
-      properties:
-        isActive:
-          type: boolean
-      required:
-      - isActive
     CreatePlatformWebhookDto:
       type: object
       properties:
@@ -168,6 +157,17 @@ components:
       required:
       - url
       - events
+    UpdatePlatformWebhookDto:
+      type: object
+      properties:
+        url:
+          type: string
+        events:
+          type: array
+          items:
+            type: string
+        secret:
+          type: string
   securitySchemes:
     bearer:
       scheme: Bearer

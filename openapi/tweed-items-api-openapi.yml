@@ -111,6 +111,56 @@ paths:
       - bearer: []
 components:
   schemas:
+    PayoutDto:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - free
+          - fiat
+          - native
+          - stablecoin
+        blockchainId:
+          type: string
+        stripeConnectedAccountId:
+          type: string
+        assetId:
+          type: string
+        spender:
+          type: string
+      required:
+      - type
+      - blockchainId
+      - stripeConnectedAccountId
+      - assetId
+      - spender
+    ContractDto:
+      type: object
+      properties:
+        address:
+          type: string
+        blockchainId:
+          type: string
+        abi:
+          type: object
+      required:
+      - address
+      - blockchainId
+      - abi
+    ContractFunctionDto:
+      type: object
+      properties:
+        functionSignature:
+          type: string
+        fixedFunctionParams:
+          type: object
+        contract:
+          $ref: '#/components/schemas/ContractDto'
+      required:
+      - functionSignature
+      - fixedFunctionParams
+      - contract
     ItemDto:
       type: object
       properties:
@@ -165,56 +215,6 @@ components:
       - priceCurrency
       - contractFunctionId
       - payoutId
-    ContractFunctionDto:
-      type: object
-      properties:
-        functionSignature:
-          type: string
-        fixedFunctionParams:
-          type: object
-        contract:
-          $ref: '#/components/schemas/ContractDto'
-      required:
-      - functionSignature
-      - fixedFunctionParams
-      - contract
-    ContractDto:
-      type: object
-      properties:
-        address:
-          type: string
-        blockchainId:
-          type: string
-        abi:
-          type: object
-      required:
-      - address
-      - blockchainId
-      - abi
-    PayoutDto:
-      type: object
-      properties:
-        type:
-          type: string
-          enum:
-          - free
-          - fiat
-          - native
-          - stablecoin
-        blockchainId:
-          type: string
-        stripeConnectedAccountId:
-          type: string
-        assetId:
-          type: string
-        spender:
-          type: string
-      required:
-      - type
-      - blockchainId
-      - stripeConnectedAccountId
-      - assetId
-      - spender
   securitySchemes:
     bearer:
       scheme: Bearer
