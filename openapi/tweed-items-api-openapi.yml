@@ -111,6 +111,19 @@ paths:
       - bearer: []
 components:
   schemas:
+    ContractFunctionDto:
+      type: object
+      properties:
+        functionSignature:
+          type: string
+        fixedFunctionParams:
+          type: object
+        contract:
+          $ref: '#/components/schemas/ContractDto'
+      required:
+      - functionSignature
+      - fixedFunctionParams
+      - contract
     PayoutDto:
       type: object
       properties:
@@ -135,32 +148,6 @@ components:
       - stripeConnectedAccountId
       - assetId
       - spender
-    ContractDto:
-      type: object
-      properties:
-        address:
-          type: string
-        blockchainId:
-          type: string
-        abi:
-          type: object
-      required:
-      - address
-      - blockchainId
-      - abi
-    ContractFunctionDto:
-      type: object
-      properties:
-        functionSignature:
-          type: string
-        fixedFunctionParams:
-          type: object
-        contract:
-          $ref: '#/components/schemas/ContractDto'
-      required:
-      - functionSignature
-      - fixedFunctionParams
-      - contract
     ItemDto:
       type: object
       properties:
@@ -192,6 +179,19 @@ components:
       - payout
       - contractFunction
       - isMainnet
+    ContractDto:
+      type: object
+      properties:
+        address:
+          type: string
+        blockchainId:
+          type: string
+        abi:
+          type: object
+      required:
+      - address
+      - blockchainId
+      - abi
     AddItemDto:
       type: object
       properties:

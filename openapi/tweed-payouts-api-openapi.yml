@@ -74,6 +74,36 @@ paths:
       - bearer: []
 components:
   schemas:
+    AddFiatPayoutDto:
+      type: object
+      properties:
+        provider:
+          type: string
+        paymentProviderId:
+          type: string
+      required:
+      - provider
+      - paymentProviderId
+    AddNativePayoutDto:
+      type: object
+      properties:
+        blockchainId:
+          type: string
+      required:
+      - blockchainId
+    AddStablecoinPayoutDto:
+      type: object
+      properties:
+        blockchainId:
+          type: string
+        tokenId:
+          type: string
+        spender:
+          type: string
+      required:
+      - blockchainId
+      - tokenId
+      - spender
     AddPayoutDto:
       type: object
       properties:
@@ -95,36 +125,6 @@ components:
       required:
       - type
       - name
-    AddFiatPayoutDto:
-      type: object
-      properties:
-        provider:
-          type: string
-        paymentProviderId:
-          type: string
-      required:
-      - provider
-      - paymentProviderId
-    AddStablecoinPayoutDto:
-      type: object
-      properties:
-        blockchainId:
-          type: string
-        tokenId:
-          type: string
-        spender:
-          type: string
-      required:
-      - blockchainId
-      - tokenId
-      - spender
-    AddNativePayoutDto:
-      type: object
-      properties:
-        blockchainId:
-          type: string
-      required:
-      - blockchainId
   securitySchemes:
     bearer:
       scheme: Bearer
