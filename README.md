@@ -64,6 +64,134 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Tweed is a company surfaced as a portfolio company of accel and added to the API Evangelist network as a stub for enrichment. Sector: payments. This profile is a lead awaiting the enrichment pipeline.
+Tweed is an Accel-backed embedded-crypto platform offering Wallet-as-a-Service and NFT/token checkout APIs. Platforms embed self-custodial wallets (social login recovery, EIP-1193 EVM provider) and sell fungible and non-fungible tokens to buyers paying by card, Apple Pay, or Google Pay, with fiat, native, or stablecoin settlement across 12+ chains including Ethereum, Polygon, Base, Solana, and Tezos. A REST API (V2) manages contracts, items, payouts, checkouts, and HMAC-signed webhooks; note the marketing site and dashboard host were unreachable as of July 2026 while the docs, API, and npm SDKs remain live.
 
-Backed by: accel — https://www.paytweed.com/
+**Areas:** Company · Payments · Cryptocurrency · Wallets · NFT · Blockchain · Web3 · Checkout
+
+## Tweed on APIs.io
+
+Everything profiled for Tweed is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/tweed/](https://apis.io/providers/tweed/)** — or go straight to one of the APIs or properties below.
+
+### APIs (12)
+
+- [Tweed API (V1)](https://apis.io/apis/tweed/tweed-api-v1/) — Legacy marketplace/collections API — obtain a JWT with your API key and secret, then manage NFT collections and in-platform tokens for token checkout.
+- [Tweed Assets API](https://apis.io/apis/tweed/tweed-assets-api/) — The assets API from Tweed — 5 operation(s) for assets.
+- [Tweed Audit Event Mappings API](https://apis.io/apis/tweed/tweed-audit-event-mappings-api/) — The audit-event-mappings API from Tweed — 1 operation(s) for audit-event-mappings.
+- [Tweed Auth API](https://apis.io/apis/tweed/tweed-auth-api/) — The auth API from Tweed — 3 operation(s) for auth.
+- [Tweed Blockchains API](https://apis.io/apis/tweed/tweed-blockchains-api/) — The blockchains API from Tweed — 4 operation(s) for blockchains.
+- [Tweed Checkout API](https://apis.io/apis/tweed/tweed-checkout-api/) — The checkout API from Tweed — 4 operation(s) for checkout.
+- [Tweed Contracts API](https://apis.io/apis/tweed/tweed-contracts-api/) — The contracts API from Tweed — 5 operation(s) for contracts.
+- [Tweed Items API](https://apis.io/apis/tweed/tweed-items-api/) — The items API from Tweed — 5 operation(s) for items.
+- [Tweed Payouts API](https://apis.io/apis/tweed/tweed-payouts-api/) — The payouts API from Tweed — 4 operation(s) for payouts.
+- [Tweed Platform Webhooks API](https://apis.io/apis/tweed/tweed-platform-webhooks-api/) — The platform-webhooks API from Tweed — 3 operation(s) for platform-webhooks.
+- [Tweed Rate API](https://apis.io/apis/tweed/tweed-rate-api/) — The Rate API from Tweed — 1 operation(s) for rate.
+- [Tweed Tickets API](https://apis.io/apis/tweed/tweed-tickets-api/) — The tickets API from Tweed — 1 operation(s) for tickets.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Tweed Webhooks](https://apis.io/asyncapis/tweed/tweed-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [tweed](https://apis.io/servers/tweed/tweed/)
+
+#### Collections (11)
+
+Postman and Open Collection request collections.
+
+- [Tweed assets API](https://apis.io/collections/tweed/open-tweed-assets-api/)
+- [Tweed assets audit-event-mappings API](https://apis.io/collections/tweed/open-tweed-audit-event-mappings-api/)
+- [Tweed assets auth API](https://apis.io/collections/tweed/open-tweed-auth-api/)
+- [Tweed assets blockchains API](https://apis.io/collections/tweed/open-tweed-blockchains-api/)
+- [Tweed assets checkout API](https://apis.io/collections/tweed/open-tweed-checkout-api/)
+- [Tweed assets contracts API](https://apis.io/collections/tweed/open-tweed-contracts-api/)
+- [Tweed assets items API](https://apis.io/collections/tweed/open-tweed-items-api/)
+- [Tweed assets payouts API](https://apis.io/collections/tweed/open-tweed-payouts-api/)
+- [Tweed assets platform-webhooks API](https://apis.io/collections/tweed/open-tweed-platform-webhooks-api/)
+- [Tweed assets Rate API](https://apis.io/collections/tweed/open-tweed-rate-api/)
+- [Tweed assets tickets API](https://apis.io/collections/tweed/open-tweed-tickets-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Tweed Api V2 Overlay](https://apis.io/overlays/tweed/tweed-api-v2-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Tweed Authentication](https://apis.io/security/tweed/tweed-authentication/)
+- [Tweed Domain Security](https://apis.io/security/tweed/tweed-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.paytweed.com/)
+- [Documentation](https://docs.paytweed.com/)
+- [Getting started](https://docs.paytweed.com/getting-started/embedded-wallets-or-waas)
+- [API reference](https://docs.paytweed.com/developer-tools/api/api-v2/api-reference)
+- [Pricing](https://docs.paytweed.com/developer-tools/pricing)
+- [Compliance](https://docs.paytweed.com/getting-started/token-checkout-or-payments/legacy-token-checkout/features/aml-and-kyc-policy-overview)
+
+## API Evangelist rating
+
+**Kin Score 36.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 46.4 |
+| Contract governance | 4.5 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 66.1 |
+| Access clarity | 18.4 |
+
+**Agent readiness 20.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 19.6** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/tweed/](https://apis.io/providers/tweed/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Tweed: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/tweed/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
